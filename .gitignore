@@ -1,0 +1,5 @@
+_build
+venv/
+
+# Local Netlify folder
+.netlify
