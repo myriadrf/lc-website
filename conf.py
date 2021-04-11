@@ -19,8 +19,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'LibreCellular'
-copyright = '2021, LibreCellular Contributors'
-author = 'LibreCellular Contributors'
+copyright = '2021, LibreCellular contributors'
+author = 'LibreCellular contributors'
 
 # The full version, including alpha/beta/rc tags
 release = '21.04'
@@ -53,7 +53,32 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = "sphinx_rtd_theme"
 
+html_theme_options = {
+    'logo_only': False,
+    'display_version': True,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4
+}
+
+html_logo = 'images/LC_logo_200w.png'
+html_favicon = 'images/LC_favicon_34x33.png'
+
+html_show_sphinx = False
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = ['lc-custom.css']
+
+html_last_updated_fmt = '%b %d, %Y'
+
+html_context = {
+    'display_github': True,
+    'github_user': 'myriadrf',
+    'github_repo': 'lc-website',
+    'github_version': 'master/' 
+}
+
