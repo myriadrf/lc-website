@@ -1,3 +1,5 @@
+.. figure:: images/LC_Board_Logo_Detail_A_1280w.jpg
+
 Introduction
 ============
 
