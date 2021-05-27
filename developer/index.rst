@@ -8,6 +8,6 @@ There is not much here to see just yet, but this will be expanded upon over time
 
    ci_hardware
 
-Discussion is via the `MyriadRF Forum`_.
+Discussion is hosted via the `MyriadRF Forum`_.
 
 .. _MyriadRF Forum: https://discourse.myriadrf.org/c/projects/librecellular/ 
