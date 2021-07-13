@@ -39,7 +39,7 @@ CLKDST
 
 Reference clock distribution.
 
-RF4AT4
+RF44AT
 ^^^^^^
 
 4x to 4x RF splitter/combiner, plus digitally controlled attenuation
