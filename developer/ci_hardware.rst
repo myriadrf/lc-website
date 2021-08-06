@@ -5,25 +5,47 @@
 CI Hardware Platform
 ====================
 
-This page is presently a skeleton and detailed information will be added in due
-course.
+The continous integration hardware platform provides provides a combination of
+base stations and modem banks, with cabled RF and splitter/combiner network with
+variable attenuation, plus support infrastructure such as clock distribution,
+interfacing and control.
+
+The CI hardware is modular in nature and housed in a 19" equipment rack.
 
 Subsystems
 ----------
 
-The subsystems listed below will be housed in a single 19" equipment rack. Each
-subsystem is comprised of numerous components.
+The CI platform is comprised of numerous subsystems and these are listed below,
+with details provided for the main components used in each. Links are provided
+for further details of COTS/third party components used, while details of
+original components developed as part of this project can be found at the bottom
+of this page.
+
+A comprehensive bill of materials, together with mechanical CAD files and
+drawings for the enclosures, will be published in due course.
 
 RFTST
 ^^^^^
 
-RF test and measurement.
+.. figure:: images/GenComm_GC747A.jpg
+
+A GenComm GC747A will be used for RF test and measurement.
+
+Typical measurements include:
+
+* RF power
+* Adjacent channel power ratio (ACPR)
+* Error vector magnitude (EVM)
 
 CIHOST
 ^^^^^^
 
+.. figure:: images/HPE_DL20_Gen10.jpg
+
 Continous integration (CI) host. This will be used to automate software build
 and test.
+
+Specifications:
 
 * `HPE ProLiant DL20 Gen10`_ (P17079-B21).
 * 16GB RAM.
@@ -32,15 +54,15 @@ and test.
 TSTCON
 ^^^^^^
 
-.The test controller unit:
+The test controller unit:
 
 * Provides remote console and power/reset control for base stations.
 * Drives LTE modem banks.
 
 It is comprised of:
 
-* APU2E4 embedded PC.
-* CONIO-A console IO board (A end).
+* `APU2E4`_ embedded PC.
+* :ref:`CONIO-A<CONIO-A>` console IO board.
 
 RANLS1
 ^^^^^^
@@ -49,9 +71,9 @@ LimeSDR base station #1.
 
 This is comprised of the Reference Hardware Platform:
 
-* Intel NUC7i7DNBE SBC.
-* CONIO-B console IO board (B end).
-* LimeSDR-USB.
+* `Intel NUC7i7DNBE`_ SBC.
+* :ref:`CONIO-B<CONIO-B>` console IO board.
+* `LimeSDR-USB`_.
 
 With the notable exception of the LimeRFE board or any other sort of RF power
 amplifier or LNA.
@@ -63,9 +85,9 @@ LimeSDR base station #2.
 
 A cost-optimised base station comprised of:
 
-* UP2 Atom x7-E3950 or similar board.
-* CONIO-B console IO board (B end).
-* LimeSDR Mini.
+* `UP2 Atom x7-E3950`_ or similar board.
+* :ref:`CONIO-B<CONIO-B>` console IO board.
+* `LimeSDR Mini`_.
 
 CLKDST
 ^^^^^^
@@ -127,16 +149,26 @@ Components
 CONIO-A
 ^^^^^^^
 
-Remote console, reset and power control — controller end.
+Remote console, reset and power control — controller (A) end.
 
 CONIO-B
 ^^^^^^^
 
-Remote console, reset and power control — base station end.
+Remote console, reset and power control — base station  (B) end.
 
 
 .. _HPE ProLiant DL20 Gen10:
    https://buy.hpe.com/uk/en/servers/proliant-dl-servers/proliant-dl20-servers/proliant-dl20-server/hpe-proliant-dl20-gen10-server/p/1011028697
+
+.. _APU2E4: https://pcengines.ch/apu2e4.htm
+
+.. _Intel NUC7i7DNBE: https://ark.intel.com/content/www/us/en/ark/products/130394/intel-nuc-board-nuc7i7dnbe.html
+
+.. _LimeSDR-USB: https://limemicro.com/products/boards/limesdr/
+
+.. _UP2 Atom x7-E3950: https://up-board.org/upsquared/specifications/
+
+.. _LimeSDR Mini: https://limemicro.com/products/boards/limesdr-mini/
 
 .. _TADD-1: https://tapr.org/product/tadd-1-rf-distribution-amplifier/
 
