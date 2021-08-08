@@ -47,6 +47,13 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['venv', '_build', 'Thumbs.db', '.DS_Store']
 
+# This is where we place substitutions, such as for Unicode characters.
+rst_epilog = """
+.. include:: /substitutions.txt
+"""
+
+# Allow same section headings and thus labels o be used across documents.
+autosectionlabel_prefix_document = True
 
 # -- Options for HTML output -------------------------------------------------
 

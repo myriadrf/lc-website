@@ -1,7 +1,5 @@
 .. figure:: images/LC_CI_Hardware_Header_1280w.jpg
 
-.. _ci_hardware:
-
 CI Hardware Platform
 ====================
 
@@ -146,10 +144,14 @@ A common DC power supply rated to provide:
 Components
 ----------
 
+.. _CONIO-A:
+
 CONIO-A
 ^^^^^^^
 
 Remote console, reset and power control — controller (A) end.
+
+.. _CONIO-B:
 
 CONIO-B
 ^^^^^^^
