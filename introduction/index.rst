@@ -30,14 +30,12 @@ The CI platform will integrate one or more test base stations with LTE modem
 banks via a cabled RF network, with reference clock distribution, control, and
 RF measurement.
 
-This is the current development focus and see :doc:`/developer/ci_hardware` for
-details.
+This is the current development focus and see :doc:`/developer/hardware/index` for details.
 
 CI Platform Configuration and Test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
-Automated testing will be made possible via use of the `OsmoGSMTester`_ software.
-Test coverage will be extended over time as the project develops.
+Automated testing will be made possible via use of the `OsmoGSMTester`_ software. Test coverage will be extended over time as the project develops.
 
 Basic Service
 ^^^^^^^^^^^^^
@@ -49,8 +47,7 @@ to transfer data.
 Voice over LTE (VoLTE) Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An IP Multimedia Subsystem (IMS) will be integrated to enable native voice calling
-using the network.
+An IP Multimedia Subsystem (IMS) will be integrated to enable native voice calling using the network.
 
 Software Stack
 --------------

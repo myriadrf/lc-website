@@ -1,3 +1,4 @@
+=======================
 Developer Documentation
 =======================
 
@@ -5,8 +6,9 @@ There is not much here to see just yet, but this will be expanded upon over time
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
-   ci_hardware
+   hardware/index
 
 Discussion is hosted via the `MyriadRF Forum`_.
 
