@@ -3,21 +3,14 @@
 CI Hardware Platform
 ====================
 
-The continous integration hardware platform provides provides a combination of
-base stations and modem banks, with cabled RF and splitter/combiner network with
-variable attenuation, plus support infrastructure such as clock distribution,
-interfacing and control.
+The continous integration hardware platform provides a combination of base stations and modem banks, with cabled RF and splitter/combiner network which features digitally controlled attenuation. The platform also includes support infrastructure such as clock distribution, interfacing and control.
 
-The CI hardware is modular in nature and housed in a 19" equipment rack.
+The platform is modular in nature and housed in a 19" equipment rack.
 
 Subsystems
 ----------
 
-The CI platform is comprised of numerous subsystems and these are listed below,
-with details provided for the main components used in each. Links are provided
-for further details of COTS/third party components used, while details of
-original components developed as part of this project can be found at the bottom
-of this page.
+The CI platform is comprised of numerous subsystems and for details of these see the pages linked from the site menu. Links are provided for further details of COTS/third party components used, while details of original components developed as part of the project are hosted on this website.
 
 .. toctree::
    :hidden:
@@ -35,6 +28,8 @@ of this page.
 
 Components
 ----------
+
+At this point the only custom components are the :doc:`/developer/hardware/conio` board set, which is used to provide a remote console, plus remote power and reset control, for SDR base stations.
 
 .. toctree::
    :hidden:

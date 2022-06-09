@@ -3,7 +3,7 @@ CIHOST
 
 .. figure:: /images/HPE_DL20_Gen10.jpg
 
-Continous integration (CI) host. This will be used to automate software build
+Continous integration (CI) host. This is used to automate software build
 and test.
 
 Specifications:

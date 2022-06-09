@@ -3,7 +3,7 @@ RFTST
 
 .. figure:: /images/GenComm_GC747A.jpg
 
-A GenComm GC747A will be used for RF test and measurement.
+A GenComm GC747A is used for RF test and measurement.
 
 Typical measurements include:
 

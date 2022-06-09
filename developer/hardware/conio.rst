@@ -1,6 +1,8 @@
 CONIO
 =====
 
+The console + I/O board set.
+
 CONIO-A
 -------
 

@@ -1,7 +1,7 @@
 CIMODS8
 =======
 
-A bank of 8x LTE modems.
+8x LTE modem bank.
 
 Components:
 

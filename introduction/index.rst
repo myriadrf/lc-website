@@ -3,7 +3,7 @@
 Introduction
 ============
 
-LibreCellular will use commodity compute hardware together with software-defined
+LibreCellular uses commodity compute hardware together with software-defined
 radio to create a highly flexible LTE base station, where the cellular core
 network may optionally run alongside this for a fully self-contained solution. A
 reference hardware platform will be provided, together with validated software
@@ -18,7 +18,7 @@ potentially circuit-switched fallback (CSFB) also at some point in the future.
 Roadmap
 -------
 
-The project will be split at a high level into four phases, with the first
+The project is split at a high level into four initial phases, with the first
 being concerned with building out the CI hardware platform. This will be
 followed by CI configuration and test, support for basic LTE data service, and
 then support for native voice calling over LTE.
@@ -26,7 +26,7 @@ then support for native voice calling over LTE.
 Continous Integration (CI) Hardware
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CI platform will integrate one or more test base stations with LTE modem
+The CI platform integrates one or more test base stations with LTE modem
 banks via a cabled RF network, with reference clock distribution, control, and
 RF measurement.
 
@@ -86,12 +86,18 @@ Baseband Processing
 ^^^^^^^^^^^^^^^^^^^
 
 An Intel `NUC7i7DNBE`_ SBC will be used for baseband processing and running the
-upper layers of the cellular stack. 
+upper layers of the cellular stack.
+
+.. note::
+    Other SBCs will also be validated and this is just the first board that is being targeted.
 
 SDR Hardware
 ^^^^^^^^^^^^
 
 The original `LimeSDR-USB`_ board has been selected for the SDR hardware.
+
+.. note::
+    On 1st June 2022 it was announced that the original LimeSDR board would be discontinued. However, a limited supply will be made available for the LibreCellular project and contributors and it was always planned for LimeSDR Mini support to follow, which should equally work with v1 and v2 boards. 
 
 RF Front End
 ^^^^^^^^^^^^
