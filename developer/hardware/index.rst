@@ -10,10 +10,10 @@ The platform is modular in nature and housed in a 20U 19" equipment rack.
 Subsystems
 ----------
 
-The CI platform is comprised of numerous subsystems and for details of these see the pages linked below andfrom the site menu. External links are provided for further details of COTS/third party components used, while details of original components developed as part of the project are hosted on this website.
+The CI platform is comprised of numerous subsystems and for details of these see the pages linked below and from the site menu. External links are provided for further details of COTS/third party components used, while details of original components developed as part of the project are hosted on this website.
 
 .. list-table:: Rack Layout
-   :widths: 5 8 6 50
+   :widths: 5 8 10 50
    :header-rows: 1
 
    * - Position
