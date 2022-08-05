@@ -22,55 +22,67 @@ The CI platform is comprised of numerous subsystems and for details of these see
      - Description
    * - *TOP*
      - :doc:`rftst`
-     - 
+     - Procured
      - RF test and measurement (GenComm GC747A)
    * - 20
-     - FAN
-     - 
-     - Fan tray 
-   * - 19
      - SWITCH
-     - 
-     - Managed Gigabit Ethernet switch
+     - Procured
+     - Managed Gigabit Ethernet switch  
+   * - 19
+     - *Empty*
+     - *N/A*
+     - Leave empty to allow network cables to be routed out. 
    * - 18
      - :doc:`cihost`
-     - 
+     - Procured
      - CI server
    * - 17
      - :doc:`cicon`
-     - *Build*
+     - Assembled
      - CI controller
    * - 15-16
      - :doc:`ciran1`
-     - *Build*
+     - Assembled
      - Base station #1 (LimeSDR-USB + Intel NUC)
    * - 13-14
      - :doc:`ciran2`
-     - 
+     - Assembled
      - Base station #2 (LimeSDR Mini + UP2)
-   * - 11-12
+   * - 12
+     - CIRAN3
+     - *Future*
+     - Base station #3 (TBC)  
+   * - 11
      - :doc:`cirf44`
-     - 
-     - RF distribution network
+     - Assembled
+     - RF distribution network A
    * - 10
-     - :doc:`ciclkd`
-     -  
-     - Reference clock distribution
+     - :doc:`cirf44`
+     - *Future*
+     - RF distribution network B (MIMO)
    * - 9
      - :doc:`cimods8`
-     - *Build*
+     - Assembled
      - 8x LTE modem bank
    * - 7-8
      - :doc:`cimodq4`
-     -   
+     - *Future*
      - 4x LTE (VoLTE) modem bank
+   * - 6
+     - AUDTST
+     - *Future*
+     - Audio test and mesurement (for VoLTE)    
+   * - 5
+     - :doc:`ciclkd`
+     - Assembled
+     - Reference clock distribution    
    * - 3-4
      - :doc:`cipsu`
-     - *Build*
-     - 12V + 5V DC power supply
+     - Assembled
+     - 12V + 5V DC power supply  
    * - 1-2
      - UPS
-     -
+     - *Future*
      - Uninterruptible power supply
 
 .. note::
