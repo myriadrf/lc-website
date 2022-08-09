@@ -57,11 +57,11 @@ The CI platform is comprised of numerous subsystems and for details of these see
      - *Future*
      - Base stations #3 + #4 (TBC)  
    * - 12
-     - :doc:`cirf44`
+     - :doc:`cirf4x16`
      - Assembled
      - RF distribution network A
    * - 11
-     - :doc:`cirf44`
+     - :doc:`cirf4x16`
      - *Future*
      - RF distribution network B (MIMO)
    * - 10
@@ -108,7 +108,7 @@ The CI platform is comprised of numerous subsystems and for details of these see
    cicon
    ciran1
    ciran2
-   cirf44
+   cirf4x16
    ciclkd
    cimods8
    cimodq4
