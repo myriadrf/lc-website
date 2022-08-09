@@ -248,6 +248,7 @@ Bill of materials
      - `126-0318`_
    * - Misc.
      - Molex Micro-Fit female crimp contacts
+     - Molex
      - 43030-0007
      - RS Components
      - `233-3009`_
