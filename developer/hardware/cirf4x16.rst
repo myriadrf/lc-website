@@ -46,6 +46,12 @@ Bill of materials
      - Man. Part
      - Distributor
      - Dist. Part
+   * - Enclosure
+     - 1U Rack-mount enclosure
+     - nVent SCHROFF
+     - 20860122
+     - Farnell
+     - `1455925`_
    * - D1
      - Panel mount LED indicator, green
      - RS Pro
@@ -154,6 +160,8 @@ Bill of materials
      - 
      - 
      - 
+
+.. _1455925: https://uk.farnell.com/schroff/20860-122/case-19-rack-1u-340mm/dp/1455925
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7622: https://uk.rs-online.com/web/p/through-hole-resistors/7077622
 .. _568-NC3MD-LX-M3: https://mou.sr/3SJLxYK

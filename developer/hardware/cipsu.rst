@@ -35,6 +35,18 @@ Bill of materials
      - Man. Part
      - Distributor
      - Dist. Part
+   * - Enclosure
+     - 2U Rack-mount enclosure
+     - nVent SCHROFF
+     - 20860626
+     - Farnell
+     - `1816037`_
+   * - MP1
+     - 2U enclosure mounting plate
+     - nVent SCHROFF
+     - 20860109
+     - Farnell
+     - `1370460`_
    * - PSU1
      - 5Vdc 21A SMPS
      - TDK-Lambda
@@ -216,6 +228,8 @@ Bill of materials
      - 
      -
 
+.. _1816037: https://uk.farnell.com/schroff/20860-626/rack-multipac-pro-2u-340-d-perfor/dp/1816037
+.. _1370460: https://uk.farnell.com/schroff/20860-109/chassis-plate-270d/dp/1370460
 .. _813-9106: https://uk.rs-online.com/web/p/switching-power-supplies/8139106
 .. _813-9134: https://uk.rs-online.com/web/p/switching-power-supplies/8139134
 .. _893-0606: https://uk.rs-online.com/web/p/fuse-holders/8930606

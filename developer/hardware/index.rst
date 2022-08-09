@@ -1,4 +1,5 @@
-.. figure:: /images/LC_CI_Hardware_Header_1280w.jpg
+.. figure:: /images/CI_HW_Rack_600h.jpg
+   :align: center
 
 CI Hardware Platform
 ====================

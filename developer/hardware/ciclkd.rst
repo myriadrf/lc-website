@@ -36,6 +36,12 @@ Bill of materials
      - Man. Part
      - Distributor
      - Dist. Part
+   * - Enclosure
+     - 1U Rack-mount enclosure
+     - nVent SCHROFF
+     - 20860120
+     - RS Components
+     - `454-9666`_
    * - M1
      - TADD-1 RF distribution amplifier
      - TAPR
@@ -85,6 +91,7 @@ Bill of materials
      - 
      -
 
+.. _454-9666: https://uk.rs-online.com/web/p/server-cabinet-accessories/4549666
 .. _TADD-1: https://tapr.org/product/tadd-1-rf-distribution-amplifier/
 .. _TADD-3: https://tapr.org/product/tadd-3-pulse-per-second-distribution-amplifier/
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331

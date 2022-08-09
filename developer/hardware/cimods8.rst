@@ -35,6 +35,12 @@ Bill of materials
      - Man. Part
      - Distributor
      - Dist. Part
+   * - Enclosure
+     - 1U Rack-mount enclosure
+     - nVent SCHROFF
+     - 20860120
+     - RS Components
+     - `454-9666`_
    * - M1-2
      - sysmoQMOD modem carrier board
      - Sysmocom
@@ -120,6 +126,7 @@ Bill of materials
      - 
      -
 
+.. _454-9666: https://uk.rs-online.com/web/p/server-cabinet-accessories/4549666
 .. _sysmoQMOD: https://www.sysmocom.de/news/sysmoqmod/index.html
 .. _CBA-UFLSMA20: https://www.rfsolutions.co.uk/cable-assemblies-adaptors-c4/cable-assembly-ufl-to-sma-200mm-p7
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
