@@ -35,7 +35,7 @@ The CI platform is comprised of numerous subsystems and for details of these see
    * - 22
      - *Empty*
      - *N/A*
-     - Leave empty to allow network cables to be routed out. 
+     - Leave empty to allow network cables to be routed out
    * - 21
      - :doc:`cihost`
      - Procured
@@ -83,7 +83,7 @@ The CI platform is comprised of numerous subsystems and for details of these see
    * - 5
      - Shelf
      - 
-     - 1U shelf for general use, e.g. a local GPSDO.     
+     - 1U shelf for general use, e.g. a local GPSDO     
    * - 3-4
      - :doc:`cipsu`
      - Assembled
