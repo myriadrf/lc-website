@@ -6,7 +6,7 @@ CI Hardware Platform
 
 The continous integration hardware platform provides a combination of base stations and modem banks, with cabled RF and splitter/combiner network which features digitally controlled attenuation. The platform also includes support infrastructure such as clock distribution, interfacing and control.
 
-The platform is modular in nature and housed in a 20U 19" equipment rack.
+The platform is modular in nature and housed in a 24U 19" equipment rack.
 
 Subsystems
 ----------
