@@ -3,7 +3,8 @@
 CIRAN1
 ======
 
-LimeSDR base station #1.
+This susbsystem is based on the :ref:`introduction/index:Reference Hardware Platform` 
+and is comprised of an SBC, LimeSDR and duplexers, without any RF PA or LNA.
 
 Views
 -----
@@ -21,7 +22,13 @@ Theory of operation
 
 .. figure:: /images/CIRAN1_Block_Diagram.svg
 
-Fill in.
+An Intel NUC running Linux and the cellular network stack is cabled via USB 3.0
+to a LimeSDR-USB, which Tx and Rx for channels A + B cabled to two Band 3 
+duplexers. A CONIO-B board is used to connect the subsystem to the  :doc:`cicon`
+for remote console plus power and rest control. An external clock reference is 
+provided via a rear panel BNC connector, with Ch. A and Ch. B RF connected to 
+RF distribution networks. Front panel SMA connectors allow monitoring of
+transmitted signals, via the duplexers which provide signals coupled at -30dB. 
 
 Bill of materials
 -----------------

@@ -26,7 +26,13 @@ Theory of operation
 
 .. figure:: /images/CIRF4x16_Block_Diagram.svg
 
-TODO: Fill in
+Up to four base stations may be connected via a 4-channel digitally controlled RF attenuator, which is in turn cabled to a 1:4 RF splitter/combiner, with a single connection from this to a front panel mounted SMA connector.
+
+Up to sixteen cellular modems may be connected, via four groups of four, with each group connected to a 1:4 RF splitter/combiner + attenuation. The resulting four RF paths are then connected to another 1:4 RF splitter/combiner, following which a single connection from this to a second front panel mounted SMA connector.
+
+In typical operation a link is connected across the two front panel SMA connectors, bridging the two networks. However, this link may be removed in order to allow other equipment to be inserted into the RF path, such as a fading simulator, for example.
+
+A single CIRF4x16 may support up to four base stations plus sixteen cellular modems in SISO operation, and two units may be used for 2x2 MIMO etc.
 
 Bill of materials
 -----------------
@@ -119,7 +125,7 @@ Bill of materials
      - 
      - 
    * - M4-7
-     - 1:4 splitter/combiner
+     - 1:4 splitter/combiner + attenutation
      - Sysmocom
      - rfcomb4r-att
      - Sysmocom
