@@ -76,7 +76,7 @@ Bill of materials
      - Nidec Copal
      - F310R-12LLC
      - Mouser
-     - `229-F130R-12LLC`_
+     - `229-F310R-12LLC`_
    * - TB1
      - Distribution block with 6 terminals, red
      - Phoenix Contact

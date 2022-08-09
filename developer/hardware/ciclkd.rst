@@ -78,7 +78,7 @@ Bill of materials
      - 
      - 
      - 
-   * - Misc (TODO: proper component category)
+   * - Misc.
      - 0.5mm\ :sup:`2` tri-rated wire in red and black
      - 
      - 

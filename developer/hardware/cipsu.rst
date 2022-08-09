@@ -143,73 +143,73 @@ Bill of materials
      - 3032143
      - RS Components
      - `855-2067`_
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - D-ST End Cover for DIN Rail Terminal Blocks
      - Phoenix Contact
      - 3030417
      - RS Components
      - `388-4637`_
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 2.5mm\ :sup:`2` ferrules
      - 
      - 
      - 
      - 
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 0.5mm\ :sup:`2` ferrules
      - 
      - 
      - 
      - 
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 1.5mm\ :sup:`2` ferrules
      - 
      - 
      - 
      - 
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 10mm\ :sup:`2` tri-rated wire in red and black
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 2.5mm\ :sup:`2` tri-rated wire in red, white and black
      - 
      - 
      - 
      - 
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 0.5mm\ :sup:`2` tri-rated wire in red, white and black
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 1.5mm\ :sup:`2` tri-rated wire in brown, blue and green/yellow
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc
      - 10mm\ :sup:`2` M5 stud ring terminals
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 1.5mm\ :sup:`2` M3.5 stud ring terminals
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 1.5mm\ :sup:`2` M3.5 stud ring terminals
      - 
      - 
      - 
      -
-   * - Misc (TODO: proper component category)
+   * - Misc 
      - 1.5mm\ :sup:`2` 4.8x0.8mm female spade terminals
      - 
      - 
