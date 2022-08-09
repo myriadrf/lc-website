@@ -24,58 +24,66 @@ The CI platform is comprised of numerous subsystems and for details of these see
      - :doc:`rftst`
      - Procured
      - RF test and measurement (GenComm GC747A)
-   * - 20
+   * - 24
+     - Blank
+     - 
+     - 1U blanking panel  
+   * - 23
      - SWITCH
      - Procured
      - Managed Gigabit Ethernet switch  
-   * - 19
+   * - 22
      - *Empty*
      - *N/A*
      - Leave empty to allow network cables to be routed out. 
-   * - 18
+   * - 21
      - :doc:`cihost`
      - Procured
      - CI server
-   * - 17
+   * - 20
      - :doc:`cicon`
      - Assembled
      - CI controller
-   * - 15-16
+   * - 18-19
      - :doc:`ciran1`
      - Assembled
      - Base station #1 (LimeSDR-USB + Intel NUC)
-   * - 13-14
+   * - 16-17
      - :doc:`ciran2`
      - Assembled
      - Base station #2 (LimeSDR Mini + UP2)
-   * - 12
-     - CIRAN3
+   * - 13-15
+     - CIRANn
      - *Future*
-     - Base station #3 (TBC)  
-   * - 11
+     - Base stations #3 + #4 (TBC)  
+   * - 12
      - :doc:`cirf44`
      - Assembled
      - RF distribution network A
-   * - 10
+   * - 11
      - :doc:`cirf44`
      - *Future*
      - RF distribution network B (MIMO)
-   * - 9
+   * - 10
      - :doc:`cimods8`
      - Assembled
      - 8x LTE modem bank
-   * - 7-8
+   * - 8-9
      - :doc:`cimodq4`
      - *Future*
      - 4x LTE (VoLTE) modem bank
-   * - 6
+   * - 7
      - AUDTST
      - *Future*
      - Audio test and mesurement (for VoLTE)    
-   * - 5
+   * - 6
      - :doc:`ciclkd`
      - Assembled
-     - Reference clock distribution    
+     - Reference clock distribution
+   * - 5
+     - Shelf
+     - 
+     - 1U shelf for general use, e.g. a local GPSDO.     
    * - 3-4
      - :doc:`cipsu`
      - Assembled
