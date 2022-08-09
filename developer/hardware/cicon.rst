@@ -24,7 +24,9 @@ Theory of operation
 
 .. figure:: /images/CICON_Block_Diagram.svg
 
-Fill in.
+A PC Engines APU2E4 SBC is used together with a LibreCellular CONIO-A board, to provide remote access to base station serial consoles, along with power and reset toggling, via connection to CONIO-B boards at the remote end.
+
+The SBC also provides USB ports, which together with those provided by the :doc:`cihost`, may be used to drive cellular modems and control RF attenuators.
 
 Bill of materials
 -----------------
