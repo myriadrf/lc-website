@@ -100,6 +100,12 @@ Bill of materials
      - CCSMA2-MM-RG174-12
      - Mouser
      - `549-SMA2-MM-RG174-12`_
+   * - CBL31
+     - Semi-rigid 2" SMA male to male jumper
+     - Mini-Circuits
+     - 086-2SMR+
+     - Mouser
+     - `139-086-2SMR`_
    * - M1
      - Four-channel digitally controlled step attenuator
      - Sysmocom
@@ -136,6 +142,12 @@ Bill of materials
      - M20-1180042
      - RS Components
      - `681-2878`_
+   * - Misc.
+     - 22awg hook-up wire to build signal harnesses
+     - 
+     - 
+     - 
+     - 
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7622: https://uk.rs-online.com/web/p/through-hole-resistors/7077622
 .. _568-NC3MD-LX-M3: https://mou.sr/3SJLxYK
@@ -150,3 +162,4 @@ Bill of materials
 .. _681-2878: https://uk.rs-online.com/web/p/crimp-contacts/6812878
 .. _sysmoRFDSATT-4-62: https://www.sysmocom.de/products/lab/rfdsatt/index.html
 .. _rfcomb4r-att: https://shop.sysmocom.de/52.5dB-IL-resistive-1-4-RF-splitter-combiner-attenuator-PCBA-U.FL-in-SMA-out/rfcomb4r-att40
+.. _139-086-2SMR: https://www.mouser.co.uk/ProductDetail/139-086-2SMR
