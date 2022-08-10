@@ -246,6 +246,12 @@ Bill of materials
      - 43030-0007
      - RS Components
      - `233-3009`_
+  
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7666: https://uk.rs-online.com/web/p/through-hole-resistors/7077666
 .. _568-NC3MD-LX-M3: https://mou.sr/3SJLxYK
@@ -272,3 +278,4 @@ Bill of materials
 .. _126-0318: https://uk.rs-online.com/web/p/crimped-wire/1260318
 .. _233-2753: https://uk.rs-online.com/web/p/wire-housings-plugs/2332753
 .. _233-3009: https://uk.rs-online.com/web/p/crimp-contacts/2333009
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIRAN1

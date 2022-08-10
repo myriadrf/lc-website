@@ -228,6 +228,11 @@ Bill of materials
      - 
      -
 
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _1816037: https://uk.farnell.com/schroff/20860-626/rack-multipac-pro-2u-340-d-perfor/dp/1816037
 .. _1370460: https://uk.farnell.com/schroff/20860-109/chassis-plate-270d/dp/1370460
 .. _813-9106: https://uk.rs-online.com/web/p/switching-power-supplies/8139106
@@ -249,3 +254,4 @@ Bill of materials
 .. _804-0393: https://uk.rs-online.com/web/p/din-rail-terminal-accessories/8040393
 .. _855-2067: https://uk.rs-online.com/web/p/din-rail-terminal-accessories/8552067
 .. _388-4637: https://uk.rs-online.com/web/p/din-rail-terminal-accessories/3884637
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIPSU

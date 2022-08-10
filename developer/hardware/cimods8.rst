@@ -126,6 +126,11 @@ Bill of materials
      - 
      -
 
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _454-9666: https://uk.rs-online.com/web/p/server-cabinet-accessories/4549666
 .. _sysmoQMOD: https://www.sysmocom.de/news/sysmoqmod/index.html
 .. _CBA-UFLSMA20: https://www.rfsolutions.co.uk/cable-assemblies-adaptors-c4/cable-assembly-ufl-to-sma-200mm-p7
@@ -136,3 +141,4 @@ Bill of materials
 .. _562-08346: https://mou.sr/3QqYqEX
 .. _207-2850: https://uk.rs-online.com/web/p/distribution-blocks/2072850
 .. _207-2847: https://uk.rs-online.com/web/p/distribution-blocks/2072847
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIMODS8 

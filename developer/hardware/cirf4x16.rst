@@ -161,6 +161,11 @@ Bill of materials
      - 
      - 
 
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _1455925: https://uk.farnell.com/schroff/20860-122/case-19-rack-1u-340mm/dp/1455925
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7622: https://uk.rs-online.com/web/p/through-hole-resistors/7077622
@@ -177,3 +182,4 @@ Bill of materials
 .. _sysmoRFDSATT-4-62: https://www.sysmocom.de/products/lab/rfdsatt/index.html
 .. _rfcomb4r-att: https://shop.sysmocom.de/52.5dB-IL-resistive-1-4-RF-splitter-combiner-attenuator-PCBA-U.FL-in-SMA-out/rfcomb4r-att40
 .. _139-086-2SMR: https://www.mouser.co.uk/ProductDetail/139-086-2SMR
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIRF4x16

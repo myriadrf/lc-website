@@ -167,6 +167,11 @@ Bill of materials
      - 
      - 
 
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _1455925: https://uk.farnell.com/schroff/20860-122/case-19-rack-1u-340mm/dp/1455925
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7666: https://uk.rs-online.com/web/p/through-hole-resistors/7077666
@@ -183,3 +188,4 @@ Bill of materials
 .. _681-2878: https://uk.rs-online.com/web/p/crimp-contacts/6812878
 .. _670-2263: https://uk.rs-online.com/web/p/crimp-contacts/6702263
 .. _821-2810: https://uk.rs-online.com/web/p/d-sub-backshells/8212810
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CICON

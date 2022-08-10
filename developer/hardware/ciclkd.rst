@@ -91,6 +91,11 @@ Bill of materials
      - 
      -
 
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _454-9666: https://uk.rs-online.com/web/p/server-cabinet-accessories/4549666
 .. _TADD-1: https://tapr.org/product/tadd-1-rf-distribution-amplifier/
 .. _TADD-3: https://tapr.org/product/tadd-3-pulse-per-second-distribution-amplifier/
@@ -98,3 +103,4 @@ Bill of materials
 .. _707-7666: https://uk.rs-online.com/web/p/through-hole-resistors/7077666
 .. _568-NC3MD-LX-M3: https://mou.sr/3SJLxYK
 .. _523-31-10-RFXG1: https://mou.sr/3zEnQZ8
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CICLKD

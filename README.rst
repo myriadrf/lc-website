@@ -11,4 +11,4 @@ Licence
 
 LibreCelluar Website Sources is copyright 2021-2022 AB Open Ltd and provided under the Creative Commons Attribution 4.0 (CC BY 4.0) licence.
 
-.. _LibreCellular website: https://librecellular.org 
+.. _LibreCellular website: https://librecellular.org
