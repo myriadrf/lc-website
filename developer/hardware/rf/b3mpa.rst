@@ -6,7 +6,7 @@ LTE Band 3 Medium Power Amplifier
 
 Low power RF amplifiers for cellular bands can be obtained as off-the-shelf items without too great a cost. Whereas amplifiers which are capable of producing a few watts or more of RF power tend to become quite expensive. Meanwhile the advent of spectrum licensing schemes which permit operation of medium power systems — such as Ofcom Shared Access in rural designated areas — has meant that affordable medium power RF amplifier solutions are needed.
 
-The objective is to create a low cost RF power amplifier for LTE Band 3 (1800 MHz), which can be used together with another amplifier as a driver stage, between the SDR and the final PA. A target minimum *modulated* power output of at 32dBm (1.6W) has been set, which into an 8dBi gain antenna would result in an EIRP of 40dBM (10W).
+The objective is to create a low cost RF power amplifier for LTE Band 3 (1800 MHz), which can be used together with another amplifier as a driver stage, between the SDR and the final PA. A target minimum *modulated* power output of 32dBm (1.6W) has been set, which into an 8dBi gain antenna would result in an EIRP of 40dBM (10W).
 
 .. note::
    Modern wireless systems such as LTE use waveforms which have a high Peak-to-Average Power Ratio (PAPR), which means that a power amplifier *back-off* of at least 6-7dB is typically required in order to maintain linearity in the PA. This is essential for ensuring both good system performance and wireless regulatory compliance. 
