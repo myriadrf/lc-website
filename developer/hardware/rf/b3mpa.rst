@@ -22,11 +22,14 @@ Design
 .. figure:: /images/B3MPA_0p1_Schematic.svg
    :align: center
 
+   B3 MPA v0.1 schematic diagram.
+
 The BGY2016 data sheet provides a reference layout for fabrication using a high performance PCB laminate which is commonly used in professional RF designs. However, since this is quite expensive, the design has been modified to use the `OSH Park 4-layer Prototype Service`_ (FR408-HR substrate), which is much lower cost and has previously been used with good results in a number of RF designs.
 
 .. figure:: /images/B3MPA_0p1_Board_Plot.png
    :align: center
 
+   B3 MPA v0.1 PCB layout.
 
 .. warning::
    The design should not be fabricated using a regular 2 layer PCB service, since this will not provide sufficient impedance control. Other appropriate substrates could be used, however, the microstrip traces would need to be recalculated and modified accordingly.
@@ -107,7 +110,7 @@ P1dB Test Results
 .. figure:: /images/B3MPA_0p1_P1dB_Test_Setup.jpg
    :align: center
 
-To test the P1dB compression point of the B3MPA, a continuous wave signal at 1878.4 MHz (centre of the Ofcom Shared Access License) with the power increased from -1 to 18dBm was applied to the input. A Rohde & Schwarz ZVL network analyser was connected through a fixed 30dB attenuator to the output.
+To test the P1dB compression point of the B3MPA, a continuous wave signal at 1878.4 MHz (centre of the Ofcom Shared Access 1800MHz spectrum allocation) with the power increased from -1 to 18dBm was applied to the input. The output was was connected via a fixed 30dB attenuator to a Rohde & Schwarz ZVL13 equipped with the spectrum analsyer option.
 
 .. list-table:: Equipment utilised
     :header-rows: 1
@@ -177,7 +180,7 @@ For input powers of -1 to 12dBm the internal attenuator on the ZVL was set to 25
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
 | 8                 | 40.38                        | 32.38      | 1447             | 71              | 27.6             |
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
-| 9                 | 41.03                        | 32.03      | 1562             | 72              | 27.6             |
+| 9                 | **41.03**                    | 32.03      | 1562             | 72              | 27.6             |
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
 | 10                | 41.55                        | 31.55      | 1677             | 74              | 27.7             |
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
@@ -197,6 +200,8 @@ For input powers of -1 to 12dBm the internal attenuator on the ZVL was set to 25
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
 | 18                | 43.01                        | 25.01      | 2553             | 84              | 27.8             |
 +-------------------+------------------------------+------------+------------------+-----------------+------------------+
+
+We can see from the above results that the gain drops from ~33dB to ~32dB at an output power of 41dBm, which is 1dB below the specified output (12.5W instead of 16W CW). If we were to then back-off the output power by 7dB for use with an LTE signal, this would give us a maximum useful power output of 34dBm (2.5W). Hence we should be able to meet our target modulated output power with this design.
 
 .. figure:: /images/B3MPA_0p1_P1dB_Test_Plot.svg
    :align: center
