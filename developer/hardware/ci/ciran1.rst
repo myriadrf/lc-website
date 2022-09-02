@@ -42,6 +42,18 @@ Bill of materials
      - Man. Part
      - Distributor
      - Dist. Part
+   * - Enclosure
+     - 2U Rack-mount enclosure
+     - nVent SCHROFF
+     - 20860127
+     - RS Components
+     - `245-7831`_
+   * - MP1
+     - Enclosure mounting plate
+     - LibreCellular
+     - CIRAN1_Mounting_Plate
+     - 
+     - 
    * - D1
      - Panel mount LED indicator, green
      - RS Pro
@@ -252,6 +264,9 @@ Resources
 
 * `Mechanical design and graphics`_.
 
+=======
+
+.. _245-7831: https://uk.rs-online.com/web/p/subracks/2457831
 .. _205-331: https://uk.rs-online.com/web/p/panel-mount-indicators/0205331
 .. _707-7666: https://uk.rs-online.com/web/p/through-hole-resistors/7077666
 .. _568-NC3MD-LX-M3: https://mou.sr/3SJLxYK

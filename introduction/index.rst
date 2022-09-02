@@ -30,7 +30,7 @@ The CI platform integrates one or more test base stations with LTE modem
 banks via a cabled RF network, with reference clock distribution, control, and
 RF measurement.
 
-This is the current development focus and see :doc:`/developer/hardware/index` for details.
+This is the current development focus and see :doc:`/developer/hardware/ci/index` for details.
 
 CI Platform Configuration and Test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
