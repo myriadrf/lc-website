@@ -64,8 +64,10 @@ With the PPAs configured, install Lime Suite and the srsRAN fork:
 .. note::
    Due to an issue with the latest Lime Suite packages a temporary workaround is required, whereby Lime Suite is also installed from source and this takes precedence over the packaged install. An issue has been logged and this step will be removed in due course.
 
-Temporary workaround
-^^^^^^^^^^^^^^^^^^^^
+   To implement the workaround, build Lime Suite from source, as described below. Note that it is not neccessary to build srsRAN from source also.
+
+Source build
+^^^^^^^^^^^^
 
 Install Lime Suite build dependencies:
 
@@ -86,6 +88,31 @@ Clone, build and install Lime Suite:
    make -j 4
    sudo make install
    sudo ldconfig
+
+Install srsRAN build dependencies:
+
+.. code-block:: bash
+
+   sudo apt install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
+
+Some of these will already be installed if Lime Suite was previously built from source, but are included here for completeness.
+
+Note that if Lime Suite has not been installed from source, it will be neccessary to add :code:`liblimesuite-dev` to the above dependencies installation.
+
+.. code-block:: bash
+
+   git clone https://github.com/myriadrf/srsRAN.git
+   cd srsRAN
+   git checkout lc/main
+   mkdir build
+   cd build
+   cmake -DUSE_LTE_RATES=true ../
+   make -j 4
+   sudo make install
+
+This will install the latest development build. 
+
+To install a LibreCellular release, instead of checking out :code:`lc/main`, check out a release tag, e.g. :code:`release_22_04_LC01`. The latest LibreCellular release will be the one with the highest upstream version and highest LC release suffix. Note that if a release if checked out which does not have an LCnn suffix, this will not have LMS API support and hence the eNodeB cannot be configured with the *device_name* parameter set to *lime*.
 
 .. _Ubuntu Server: https://ubuntu.com/download/server
 .. _srsRAN repo in the MyriadRF organisation: https://github.com/myriadrf/srsRAN
