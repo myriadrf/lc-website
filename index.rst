@@ -4,6 +4,7 @@
 
    Welcome <self>
    introduction/index
+   user/index
    developer/index
    faq
 

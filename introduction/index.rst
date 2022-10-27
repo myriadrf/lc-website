@@ -30,19 +30,17 @@ The CI platform integrates one or more test base stations with LTE modem
 banks via a cabled RF network, with reference clock distribution, control, and
 RF measurement.
 
-This is the current development focus and see :doc:`/developer/hardware/ci/index` for details.
-
 CI Platform Configuration and Test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 Automated testing will be made possible via use of the `OsmoGSMTester`_ software. Test coverage will be extended over time as the project develops.
 
+This is the current development focus and see :doc:`/developer/software/ci/index` for details.
+
 Basic Service
 ^^^^^^^^^^^^^
 
-Upon completion of this phase it will be possible to provision subscribers,
-connect user equipment (handsets or other terminals) to the network and use this
-to transfer data.
+This stage has been completed and for details see the :doc:`/user/index`.
 
 Voice over LTE (VoLTE) Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,7 +61,7 @@ The 4G base station component will be provided by `srsRAN`_.
 Evolved Packet Core (EPC)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is planned to use `Open5Gs`_ to provide the core network.
+It is planned to use `Open5Gs`_ to provide the core network, but initially the srsEPC component of srsRAN is being used.
 
 IP Multimedia Subsystem
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,40 +80,8 @@ The initial reference hardware is specified with a reasonable degree of headroom
 in terms of performance and flexibility, which clearly has cost implications and
 a future cost-optimised version is also anticipated.
 
-Baseband Processing
-^^^^^^^^^^^^^^^^^^^
+For details, see: :doc:`/user/hardware`
 
-An Intel `NUC7i7DNBE`_ SBC will be used for baseband processing and running the
-upper layers of the cellular stack.
-
-.. note::
-    Other SBCs will also be validated and this is just the first board that is being targeted.
-
-SDR Hardware
-^^^^^^^^^^^^
-
-The original `LimeSDR-USB`_ board has been selected for the SDR hardware.
-
-.. note::
-    On 1st June 2022 it was announced that the original LimeSDR board would be discontinued. However, a limited supply will be made available for the LibreCellular project and contributors and it was always planned for LimeSDR Mini support to follow, which should equally work with v1 and v2 boards. 
-
-RF Front End
-^^^^^^^^^^^^
-
-`LimeRFE`_ will be used to provide a multi-band RF front-end complete with LNAs,
-PAs and duplexers. This provides a modulated output of 24dBm on cellular bands
-1, 2, 3, 4 and 5.
-
-Reference Clock
-^^^^^^^^^^^^^^^
-
-The LimeSDR will utilise a Leo Bodnar `Mini Precision GPS Reference Clock`_
-reference for frequency stability and accuracy.
-
-.. _NUC7i7DNBE: https://ark.intel.com/content/www/us/en/ark/products/130394/intel-nuc-board-nuc7i7dnbe.html
-.. _LimeSDR-USB: https://wiki.myriadrf.org/LimeSDR-USB
-.. _LimeRFE: https://www.crowdsupply.com/lime-micro/limerfe
-.. _Mini Precision GPS Reference Clock: http://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=301
 .. _OsmoGSMTester: https://osmocom.org/projects/osmo-gsm-tester
 .. _Ofcom Shared Access: https://www.ofcom.org.uk/manage-your-licence/radiocommunication-licences/shared-access
 .. _CBRS: https://en.wikipedia.org/wiki/Citizens_Broadband_Radio_Service
