@@ -58,7 +58,7 @@ When successfully programmed we need to note down the security parameters that a
 If we would prefer to reuse an existing Ki and OPC, we can specify these with additional :code:`-k` and :code:`-o` parameters respectively. 
 
 .. attention::
-   Obiously the ADM1, Ki and OPC keys should be kept secure and not shared as we have done here!
+   Obviously the ADM1, Ki and OPC keys should be kept secure and not shared as we have done here!
 
 UE database configuration
 -------------------------
@@ -80,9 +80,6 @@ The fields are as follows:
 * **SQN**. UE's Sequence number for freshness of the authentication.
 * **QCI**. QoS Class Identifier for the UE's default bearer.
 * **IP alloc**. IP allocation strategy (dynamic or a valid IPv4 for static).
-
-
-
 
 .. _Osmocom Wiki: https://osmocom.org/projects/pysim/wiki 
 .. _sysmoISIM-SJA2: https://shop.sysmocom.de/sysmoISIM-SJA2-SIM-USIM-ISIM-Card-10-pack-with-ADM-keys/sysmoISIM-SJA2-10p-adm

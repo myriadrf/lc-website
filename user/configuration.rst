@@ -60,6 +60,9 @@ Examples
 LTE Band 3
 ^^^^^^^^^^
 
+An `example is provided`_ for a 3 MHz channel in LTE Band 3, with SISO configuration. This corresponds to the Ofcom Shared Access 1800 MHz allocation.
+
+Note that it will be neccessary to update the srsENB config if you need to use another channel.
 
 Customisation
 -------------
@@ -108,4 +111,5 @@ Note that subscribers must also be provisioned in the UE database and for detail
 
 .. _ITU-T Recommendation E.212 Amendment 1 (07/2018): https://www.itu.int/rec/T-REC-E.212/en
 .. _online tools: https://www.sqimway.com/lte_band.php
+.. _example is provided: https://github.com/myriadrf/lc-configs/tree/master/srsran/b3-3mhz-siso
 .. _srsRAN documentation: https://docs.srsran.com/en/latest/
