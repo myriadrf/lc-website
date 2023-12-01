@@ -1,14 +1,31 @@
+.. figure:: /images/CIMODQ4_Front_Panel_1280w.jpg
+
 CIMODQ4
 =======
 
 4x LTE modem bank with VoLTE support.
 
+Views
+-----
+
+.. figure:: /images/CIMODQ4_Rear_Panel_1280w.jpg
+   
+   CIMODQ4 Rear Panel.
+
+.. figure:: /images/CIMODQ4_Internal_1280w.jpg
+   
+   CIMODQ4 Internal.
+
 Theory of operation
 -------------------
 
-.. figure:: /images/
+.. figure:: /images/CIMODQ4_Block_Diagram.svg
 
-Four `Quectel Mini PCIe EVB`_ boards provide 4x `Quectel EC25`_ Mini PCIe modems connected via a USB hub to a front-panel USB port.
+Four `Quectel Mini PCIe EVB`_ boards are each fitted with a `Quectel EC25`_ modem and connected via a USB hub to a front-panel USB port. 
+
+EC25 modems benefit from integrated VoLTE support and audio I/O from the EVB boards is routed to a multi-pin connector.
+
+The USB hub has the capability of powering individual ports, hence modems, on and off via software control.
 
 Bill of materials
 -----------------
@@ -160,6 +177,12 @@ Bill of materials
      - 
      - 
      -
+
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
 .. _Quectel Mini PCIe EVB: https://www.quectel.com/product/mini-pcie-evb-kit/
 .. _Quectel EC25: https://www.quectel.com/product/lte-ec25-e-minipcie/
 .. _1455925: https://uk.farnell.com/schroff/20860-122/case-19-rack-1u-340mm/dp/1455925
@@ -183,3 +206,4 @@ Bill of materials
 .. _fullsize-sim-fpc: https://shop.sysmocom.de/Full-size-SIM-card-to-FPC-adapter/fullsize-sim-fpc
 .. _simffc-3ff-st-o: https://shop.sysmocom.de/SIMtrace-microSIM-3FF-FPC-Cable-FPC-opposite-cut-corner-side/simffc-3ff-st-o
 .. _MP-435LN: https://uk.farnell.com/multicomp-pro/mp-435ln/3-5mm-audio-plug-r-a-4pos-cable/dp/4066358
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIMODQ4
