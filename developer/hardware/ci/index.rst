@@ -124,3 +124,4 @@ At this point the only custom components are the :doc:`/developer/hardware/ci/co
    :hidden:
 
    conio
+   csad10
