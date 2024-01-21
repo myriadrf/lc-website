@@ -6,7 +6,7 @@ CSAD10
 
 Clock shape and distribution with 10 outputs.
 
-The CSAD10 board takes a sine or square wave reference clock input and provides ten buffered CMOS square wave outputs. It was designed with the CI platform in mind, where it might be used to distribute the reference clock within a subsystem such as :doc:`/developer/hardware/ci/ciran2`, or perhaps replace the TADD-1 board which is currently used in :doc:`/developer/hardware/ci/ciclkd`.
+The CSAD10 board takes a sine or square wave reference clock input and provides ten buffered CMOS square wave outputs. It was designed with the CI platform in mind, where it might be used to distribute the reference clock within a subsystem such as :doc:`/developer/hardware/ci/ciran2/index`, or perhaps replace the TADD-1 board which is currently used in :doc:`/developer/hardware/ci/ciclkd`.
 
 Version 0.3
 -----------

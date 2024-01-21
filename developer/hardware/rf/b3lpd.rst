@@ -4,7 +4,7 @@
 LTE Band 3 Low Power Duplexer
 =============================
 
-The Band 3 Low Power Duplexer (B3LPD) is an LTE Band 3 (1800 MHz) duplexer rated at 30 dBm (1W) downlink. It was initially designed for use in :doc:`/developer/hardware/ci/ciran2`, in place of the much larger and over-specified cavity duplexer used in :doc:`/developer/hardware/ci/ciran1`. However, it could also be used in base stations with <30 dBm transmit power.
+The Band 3 Low Power Duplexer (B3LPD) is an LTE Band 3 (1800 MHz) duplexer rated at 30 dBm (1W) downlink. It was initially designed for use in :doc:`/developer/hardware/ci/ciran2/index`, in place of the much larger and over-specified cavity duplexer used in :doc:`/developer/hardware/ci/ciran1`. However, it could also be used in base stations with <30 dBm transmit power.
 
 B3LPD also provides a -24 dB coupled output which may be used for monitoring downlink.
 

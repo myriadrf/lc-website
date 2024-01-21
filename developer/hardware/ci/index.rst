@@ -50,9 +50,9 @@ The CI platform is comprised of numerous subsystems and for details of these see
      - Assembled
      - Base station #1 (LimeSDR-USB + Intel NUC)
    * - 16-17
-     - :doc:`ciran2`
+     - :doc:`ciran2/index`
      - Assembled
-     - Base station #2 (LimeSDR Mini + UP2)
+     - Base station #2 (LimeSDR Mini 2.0 + UP 4000)
    * - 13-15
      - CIRANn
      - *Future*
@@ -108,7 +108,7 @@ The CI platform is comprised of numerous subsystems and for details of these see
    cihost
    cicon
    ciran1
-   ciran2
+   ciran2/index
    cirf4x16
    ciclkd
    cimods8
@@ -118,7 +118,7 @@ The CI platform is comprised of numerous subsystems and for details of these see
 Components
 ----------
 
-At this point the only custom components are the :doc:`/developer/hardware/ci/conio` board set, which is used to provide a remote console, plus remote power and reset control, for SDR base stations.
+Custom CI hardware components include the CONIO board set, which is used to provide a remote console, plus remote power and reset control, for SDR base stations, and CSAD10, which provides reference clock shaping and distribution with 10 outputs. See also :doc:`/developer/hardware/rf/index`.
 
 .. toctree::
    :hidden:

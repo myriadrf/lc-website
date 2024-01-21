@@ -1,0 +1,162 @@
+.. figure:: /images/CR2S01_1280w.jpg
+
+CR2S01
+======
+
+This :doc:`index` sled is a cost optimised RAN design based on a LimeSDR Mini 2.0 and UP 4000 SBC. 
+
+Since LimeSDR Mini 2.0 is a single-input single-output (SISO) software-defined radio, MIMO use is not supported. 
+
+Theory of operation
+-------------------
+
+.. figure:: /images/CR2S01_Block_Diagram.svg
+
+The LimeSDR Mini 2.0 is plugged into a USB 3.0 port on the UP 4000 SBC. 
+
+A 10 MHz external clock reference is provided via the :doc:`../csad10` board, with an  :doc:`/developer/hardware/rf/b3lpd` connected to the SDR Tx and Rx ports.
+
+Bill of materials
+-----------------
+
+.. list-table:: CR2S01 BOM
+   :header-rows: 1
+
+   * - Component
+     - Description
+     - Manufacturer
+     - Man. Part
+     - Distributor
+     - Dist. Part
+   * - M1
+     - UP 4000 Atom x7-E3950 
+     - Aeeon
+     - UP-APL03X7F-A10-0464
+     - Mouser
+     - `409-UPAPL03X7FA10464`_
+   * - M2
+     - LimeSDR Mini 2.0
+     - Lime Microsystems
+     - LimeSDR Mini 2.0
+     - Mouser
+     - `116-CS-LIME-26`_
+   * - M3
+     - LTE Band 3 Low Power Duplexer
+     - LibreCellular
+     - B3LPD
+     - 
+     - :doc:`/developer/hardware/rf/b3lpd`
+   * - J1
+     - 5.5/2.1mm DC coaxial connector
+     - RS Pro
+     - 487-858
+     - RS Components
+     - `487-858`_
+   * - J2
+     - RF Adapter SMA plug to U.FL socket
+     - RS Pro
+     - 738-5939
+     - RS Components
+     - `738-5939`_  
+   * - J3
+     - 6 position female box header
+     - Harwin
+     - M22-3020300
+     - RS Components
+     - `681-3357`_
+   * - J4
+     - 3 position female box header
+     - Harwin
+     - M20-1060300
+     - RS Components
+     - `681-2821`_
+   * - J5
+     - SH Connector Housing, 10 way
+     - JST
+     - SHR-10V-S-B
+     - RS Components
+     - `311-6552`_
+   * - J6
+     - SH Connector Housing, 4 Way
+     - JST
+     - SHR-04V-S-B
+     - RS Components
+     - `311-6524`_
+   * - CBL1 
+     - U.FL coaxial cable plug assembly, 60mm
+     - Hirose
+     - U.FL-2LP-088K1T-A-(60)
+     - RS Components
+     - `136-0911`_
+   * - CBL2
+     - 250mm Female U.FL to Male SMA Coaxial Cable
+     - RF Solutions
+     - CBA-UFL-SMAM25
+     - RS Components
+     - `125-8188`_
+   * - CBL3
+     - U.FL coaxial cable plug assembly, 200mm
+     - Hirose
+     - U.FL-LP-068N1-A-(200)
+     - RS Components
+     - `828-1901`_
+   * - CBL4
+     - RJ45 to Straight Male RJ45 Ethernet Cable. 150mm
+     - Roline 
+     - 21.15.3950-100
+     - RS Components
+     - `266-0792`_
+   * - Misc.
+     - Female crimp terminals for Harwin M20 series
+     - Harwin
+     - M20-1180042
+     - RS Components
+     - `681-2878`_
+   * - Misc.
+     - Female crimp terminals for Harwin M22 series
+     - Harwin
+     - M22-3050046
+     - RS Components
+     - `547-3245`_
+   * - Misc.
+     - Female SH to Unterminated Crimped Wire, 300mm
+     - JST
+     - SH3-SS5-28300
+     - RS Components
+     - `311-6669`_
+   * - Misc.
+     - 1.5mm\ :sup:`2` tri-rated wire in red, white black
+     - 
+     - 
+     - 
+     - 
+   * - Misc.
+     - 1.5mm\ :sup:`2` ferrules
+     - 
+     - 
+     - 
+     -  
+
+
+Resources
+---------
+
+* `Mechanical design and graphics`_.
+
+.. _409-UPAPL03X7FA10464: https://www.mouser.co.uk/ProductDetail/AAEON-UP/UP-APL03X7F-A10-0464
+.. _116-CS-LIME-26: https://www.mouser.co.uk/ProductDetail/Lime-Microsystems/CS-LIME-26
+.. _487-858: https://uk.rs-online.com/web/p/dc-power-connectors/0487858
+.. _738-5939: https://uk.rs-online.com/web/p/coaxial-adapters/7385939
+.. _681-3357: https://uk.rs-online.com/web/p/wire-housings-plugs/6813357
+.. _681-2821: https://uk.rs-online.com/web/p/wire-housings-plugs/6812821
+.. _311-6552: https://uk.rs-online.com/web/p/crimp-terminal-housings/3116552
+.. _311-6524: https://uk.rs-online.com/web/p/wire-housings-plugs/3116524
+.. _136-0911: https://uk.rs-online.com/web/p/coaxial-cable/1360911
+.. _125-8188: https://uk.rs-online.com/web/p/coaxial-cable/1258188
+.. _828-1901: https://uk.rs-online.com/web/p/coaxial-cable/8281901
+.. _266-0792: https://uk.rs-online.com/web/p/ethernet-cable/2660792
+.. _681-2878: https://uk.rs-online.com/web/p/crimp-contacts/6812878
+.. _547-3245: https://uk.rs-online.com/web/p/crimp-contacts/5473245
+.. _311-6669: https://uk.rs-online.com/web/p/crimped-wire/3116669
+
+.. _Mechanical design and graphics: https://github.com/myriadrf/lc-ci-mechanical/tree/main/CIRAN2

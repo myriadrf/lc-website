@@ -3,7 +3,7 @@
 CIRAN1
 ======
 
-This susbsystem is based on the :ref:`introduction/index:Reference Hardware Platform` 
+This subsystem is based on the :ref:`introduction/index:Reference Hardware Platform` 
 and is comprised of an SBC, LimeSDR and duplexers, without any RF PA or LNA.
 
 Views

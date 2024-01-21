@@ -68,7 +68,7 @@ html_theme_options = {
     'display_version': True,
     'collapse_navigation': False,
     'sticky_navigation': True,
-    'navigation_depth': 4
+    'navigation_depth': 5
 }
 
 html_logo = 'images/LC_logo_200w.png'
