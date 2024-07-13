@@ -9,5 +9,6 @@ RF components are being developed where existing solutions are either not availa
 .. toctree::
    :hidden:
 
+   rfe
    b3lpd
    b3mpa
