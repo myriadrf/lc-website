@@ -1,6 +1,16 @@
 Running the Network
 ===================
 
+Standard Configuration
+----------------------
+
+With the :doc:`software/standard` all the various network services will be started automically via Docker and we can check the status of these using the :code:`docker logs` and :code:`docker ps` etc. commands. 
+
+Minimal Configuration
+---------------------
+
+Details are provided here for running the network with the :doc:`software/minimal`. 
+
 With the cellular stack configured and subscribers provisioned we can now start the network. 
 
 First we need to enable masquerading if we'd like connected user equipment to have Internet access:
@@ -50,7 +60,7 @@ Finally, a speed test was run in a web browser on the handset.
 In the above eNodeB trace we can first see the download speed test, resulting in a downlink speed of 10Mbps. Following which the upload test results in uplink speeds of around 5Mbps. This is with a 3MHz RF channel (15 PRBs) and SISO configuration.
 
 Automatic startup 
------------------
+^^^^^^^^^^^^^^^^^
 
 Automatic start-up can be configured by enabling :code:`srsepc.service` and :code:`srsepc.service`.
 

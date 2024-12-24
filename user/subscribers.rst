@@ -1,73 +1,25 @@
-Subscriber Provisioning
-=======================
+Provisioning Subscribers
+========================
 
-.. figure:: /images/SIM_Programming_1.jpg
-   :align: center
+The Home Subscriber Server (HSS) is a central component of the LTE network. It is responsible for storing subscriber data such as IMSI, MSISDN and security keys. The HSS is used by the MME to authenticate subscribers and to retrieve subscriber data. The HSS is also used by the IMS. 
 
-In order to provision subscribers we will need to program SIM cards and add details to the EPC UE database.
+Not all HSS implementations are created equal and some may support only the minimum features required by an MME in order to provide a data service, while others may also support use with an IMS for VoLTE and SMS services, for example.
 
-Hardware
---------
+The  :doc:`/user/software/minimal` makes use of srsEPC and the HSS provided by this, while the  :doc:`/user/software/standard` utilises PyHSS. Hence the way that subscribers are provisioned and managed will differ between the two configurations.
 
-One or more programmable SIM cards and a suitable card reader (ideally compliant with the USB CCID specification) are requried. We use:
+srsEPC
+------
 
-* `sysmoISIM-SJA2`_ SIM cards
-* `Omnikey CardMan 3121`_ reader
-* `Professional SIM card adapter`_
+srsEPC is a lightweight implementation of a complete LTE core network (EPC).  The srsEPC application runs as a single binary but provides the key EPC components of Home Subscriber Service (HSS), Mobility Management Entity (MME), Service Gateway (S-GW) and Packet Data Network Gateway (P-GW).
 
-The adapter takes a regular, micro or nano SIM — snapped out of the full size card — and allows it to be inserted into the reader for re-programming.
+UE Database
+^^^^^^^^^^^
 
-SIM programming
----------------
-
-The PySim software should be installed and for details, see the `Osmocom Wiki`_.
-
-Before we can program a SIM card we need to know:
-
-* Manufacturer supplied parameters:
-
-  * **ICCID**. SIM card unique ID.
-  * **ADM1**. Admin key.
-* Network parameters:
-
-  * **MCC**. Mobile country code.
-  * **MNC**. Mobile network code.
-  * **IMSI**. Subscriber ID.
-  * **Network name**.
-
-To program a SIM card we enter:
+Subscribers are provisioned via a CSV file. With the :doc:`/user/software/minimal` this file is located at `/etc/srsran/user_db.csv` and should contain one line per subscriber. The format of the file is as follows:
 
 .. code-block:: bash
 
-   ./pySim-prog.py -p 0 -n LibreCellular -t sysmoISIM-SJA2 -a <ADM1> -i <IMSI> -c 44 -x 001 -y 01 -s <ICCID>
-
-This would program a sysmoISIM-SJA2 SIM card with a network name of *LibreCellular*, using the SIM card ID and admin key supplied by sysmocom, setting the MCC/MNC to 001/01, and configuring the IMSI as specified by us. 
-
-The :code:`-c` option sets the country code for the card issuer (us) and hence should be set appropriately if not located in the UK.
-
-How do we know what IMSI to use? sysmoISIM-SJA2 SIM cards are supplied pre-programmed with an IMSI already set. However, the first five digits of the IMSI should be set to the same as our network MCC+MNC. So with the above example, using 001/01, we would have an IMSI prefix of 00101. Since the cards were supplied with an IMSI prefix of 90170, one option when re-programming is to just reuse the provided IMSI and change the first five digits, from 90170 to 00101. Of course, other schemes may be used and the important thing is to ensure that the prefix matches the MCC+MNC.
-
-.. figure:: /images/SIM_Programming_Example.jpg
-   :align: center
-
-When successfully programmed we need to note down the security parameters that are returned:
-
-* Ki
-* OPC
-  
-If we would prefer to reuse an existing Ki and OPC, we can specify these with additional :code:`-k` and :code:`-o` parameters respectively. 
-
-.. attention::
-   Obviously the ADM1, Ki and OPC keys should be kept secure and not shared as we have done here!
-
-UE database configuration
--------------------------
-
-Subscribers need to be provisioned via the CSV file :code:`/etc/srsran/user_db.cv`, with one line per subscriber. For the above example this might look like:
-
-.. code-block:: bash
-
-   andrew,mil,001010000045391,bbd6b6bf43cf9e9a436567410a9dfc09,opc,9a0d35d8bcec3f9eee0ca614637f1142,9001,000000000652,7,dynamic
+   andrew,mil,001010000045391,57c9ff6040528869b72fd823d6b3e656,opc,3787fdb1cdebfdca5fa3d2dfa02422f3,9001,000000000652,7,dynamic
 
 The fields are as follows:
 
@@ -81,7 +33,93 @@ The fields are as follows:
 * **QCI**. QoS Class Identifier for the UE's default bearer.
 * **IP alloc**. IP allocation strategy (dynamic or a valid IPv4 for static).
 
-.. _Osmocom Wiki: https://osmocom.org/projects/pysim/wiki 
-.. _sysmoISIM-SJA2: https://shop.sysmocom.de/sysmoISIM-SJA2-SIM-USIM-ISIM-Card-10-pack-with-ADM-keys/sysmoISIM-SJA2-10p-adm
-.. _Omnikey CardMan 3121: https://shop.sysmocom.de/Omnikey-CardMan-3121-USB-CCID-interface/cm3121
-.. _Professional SIM card adapter: https://shop.sysmocom.de/Professional-SIM-card-adapter-plug-in-micro-nano-SIM-to-full-size/sim-adapter-pcb
+PyHSS
+-----
+
+.. figure:: /images/PyHSS_Swagger_1.jpg
+   :align: center
+
+PyHSS is a far more sophisticated HSS, supports use with an IMS as well as an MME, and additional features include an Equipment Identity Register (EIR), which can be used to lock SIM cards to a particular device or blacklist a device. It is managed via a RESTful API and unless the :code:`hss.yml` Ansible playbook has been modified, this will be available on port 8080.
+
+To load the Swagger UI for the PyHSS API, open a web browser and navigate to *http://DOCKER_HOST:8080/docs*.
+
+APNs
+^^^^
+
+If this is a new installation it will be neccessary to create at least one APN and two if you wish to support VoLTE/SMS.
+
+Select apn -> Create new APN -> Try it out. In the payload section use the below JSON and then select Execute.
+
+.. code-block:: json
+
+   {
+     "apn": "internet",
+     "apn_ambr_dl": 0,
+     "apn_ambr_ul": 0
+   }
+
+Take note of *apn_id* specified in the *Response body* under *Server response* for *internet* APN.
+
+Then repeat the above step, but this time using the JSON payload:
+
+.. code-block:: json
+
+   {
+     "apn": "ims",
+     "apn_ambr_dl": 0,
+     "apn_ambr_ul": 0
+   }
+
+Take note of *apn_id* specified in the *Response body* under *Server response* for *ims* APN.
+
+Since these are the first created, the *apn_ids* are likely to be *1* and *2*.
+
+Subscribers
+^^^^^^^^^^^
+
+In order to provision subscribers we need to first create a new AuC object, which is used to store the subscriber's security keys, before then creating a basic subscriber and an IMS subscriber. This last step can obviously be omitted if we don't have an IMS or the subscriber should not receive VoLTE/SMS service.
+
+Select auc -> Create new AUC -> Try it out. In the payload section use the below example JSON, taking care to update ki, opc and imsis for your SIM, then select Execute.
+
+.. code-block:: json
+
+   {
+     "ki": "57c9ff6040528869b72fd823d6b3e656",
+     "opc": "3787fdb1cdebfdca5fa3d2dfa02422f3",
+     "amf": "9001",
+     "sqn": 0,
+     "imsi": "001010000048862"
+   }
+
+Take note of *auc_id* specified in Response body under Server response.
+
+Next select subscriber -> Create new SUBSCRIBER -> Try it out. In the payload section use the below example JSON, taking care to update the imsi, auc_id (from the previous step), default_apn and apn_list (from APN creation steps) for your SIM and then select Execute.
+
+.. code-block:: json
+
+   {
+     "imsi": "001010000048862",
+     "enabled": true,
+     "auc_id": 1,
+     "default_apn": 1,
+     "apn_list": "1,2",
+     "msisdn": "48862",
+     "ue_ambr_dl": 0,
+     "ue_ambr_ul": 0
+   }
+
+Finally, select ims_subscriber -> Create new IMS SUBSCRIBER -> Try it out. In the payload section use the below example JSON, taking care to to update the imsi, msisdn and msisdn_list for your SIM and then select Execute.
+
+.. code-block:: json
+
+   {
+     "imsi": "001010000048862",
+     "msisdn": "48862",
+     "sh_profile": "string",
+     "scscf_peer": "scscf.ims.mnc001.mcc001.3gppnetwork.org",
+     "msisdn_list": "[48862]",
+     "ifc_path": "default_ifc.xml",
+     "scscf": "sip:scscf.ims.mnc001.mcc001.3gppnetwork.org:6060",
+     "scscf_realm": "ims.mnc001.mcc001.3gppnetwork.org"
+   }
+

@@ -1,8 +1,8 @@
 Network Configuration
 =====================
 
-Parameters
-----------
+Introduction
+------------
 
 The following minimum parameters are required when configuring an LTE network:
 
@@ -11,14 +11,13 @@ The following minimum parameters are required when configuring an LTE network:
 * Mobile Network Code (MNC)
 * RF channel number (EARFCN)
 * Bandwidth (PRBs)
-* APN name
 
 There are plenty of other configuration options, some of which are specific to the hardware configuration, while others define network behaviour. Examples of the former include the SDR type, receive and transmit gains, and whether to configure for SISO or MIMO operation. While examples of the latter include timers, resource scheduling and neighbouring cell information.
 
-However, for simple networks at least we can mostly use defaults and just need to know what we want our network to be called, the MCC/MNC tuple to use, the radio channel (which we have licensed), and the APN which user equipment (handsets and modems) should connect to.
+However, for simple networks at least we can mostly use defaults and just need to know what we want our network to be called, the MCC/MNC tuple to use (PLMN ID), the radio channel (which we have licensed), and the APN which user equipment (handsets and modems) should connect to.
 
-Network name
-^^^^^^^^^^^^
+Network name and PLMN ID
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 It's best if the network name is something short. 
 
@@ -49,30 +48,14 @@ Using the same Ofcom Shared Access example, we would need to configure our eNode
 .. note::
    Not all LTE bands support all possible channel bandwidths.  
 
-APN
-^^^
+eNodeB 
+------
 
-An APN is usually configured with either a name of *default* or *internet* and we just need to ensure that user equipment has the same APN configured.
+With the :doc:`software/minimal` the eNodeB can be configured by editing the file /etc/srsran/enb.conf.
 
-Examples
---------
+With the :doc:`software/standard` the eNodeB can be configured by editing the file /etc/lc/srslte/enb.conf.
 
-LTE Band 3
-^^^^^^^^^^
-
-An `example is provided`_ for a 3 MHz channel in LTE Band 3, with SISO configuration. This corresponds to the Ofcom Shared Access 1800 MHz allocation.
-
-Note that it will be neccessary to update the srsENB config if you need to use another channel.
-
-Customisation
--------------
-
-The most commonly used parameters are described below and for further details, please see the `srsRAN documentation`_.
-
-eNodeB
-^^^^^^
-
-The eNodeB is configured via :code:`/etc/srsran/enb.conf` and the main parameters of interest are:
+The main parameters of interest are:
 
 * **[enb]** section:
   
@@ -94,8 +77,20 @@ If an external GPS reference clock is not available, the device_args line should
 
 The value for the time_adv_nsamples parameter is specific to particular SDR hardware and corrects for the delay that this introduces. A value of *73* for the parameter appears to be optimal for LimeSDR-USB. Synchronisation is important in cellular networks and there is no harm in experimenting with this parameter in an attempt to futher improve performance.
 
+For further details, please see the `srsRAN documentation`_.
+
+LTE Band 3 Example
+^^^^^^^^^^^^^^^^^^
+
+An `example is provided`_ for a 3 MHz channel in LTE Band 3, with SISO configuration. This corresponds to the Ofcom Shared Access 1800 MHz allocation.
+
+Note that it will be neccessary to update the srsENB config if you need to use another channel.
+
 EPC
-^^^
+---
+
+Minimal Software Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The EPC is configured via :code:`/etc/srsran/epc.conf` and the main parameters of interest are:
 
@@ -108,6 +103,13 @@ The EPC is configured via :code:`/etc/srsran/epc.conf` and the main parameters o
   * **dns_addr**. Set to configure the DNS server for user equipment.
 
 Note that subscribers must also be provisioned in the UE database and for details, see :doc:`subscribers`.
+
+Standard Software Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With the :doc:`software/standard` things are somewhat more complex. Changing the network name is easily enough done by updating the values in /etc/lc/open5gs/mme.yaml. However, changing the MCC/MNC would require making changes in a lot of places.
+
+A collection of Ansible roles are planned which will make it trivial to configure a custom MCC/MNC, along with other network parameters.
 
 .. _ITU-T Recommendation E.212 Amendment 1 (07/2018): https://www.itu.int/rec/T-REC-E.212/en
 .. _online tools: https://www.sqimway.com/lte_band.php

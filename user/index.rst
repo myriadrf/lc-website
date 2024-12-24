@@ -7,8 +7,9 @@ User Guide
 
    spectrum
    hardware
-   software
+   software/index
    configuration
+   sim
    subscribers
    running
 
@@ -21,8 +22,9 @@ The following steps are required in order to create an LTE network:
 
 #. :doc:`Spectrum Licensing<spectrum>`
 #. :doc:`Hardware Setup <hardware>`
-#. :doc:`software`
+#. :doc:`software/index`
 #. :doc:`configuration`
+#. :doc:`sim`
 #. :doc:`subscribers`
 #. :doc:`running`
 
