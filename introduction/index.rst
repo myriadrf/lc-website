@@ -11,62 +11,38 @@ versions and configuration to enable repeatable deployment.
 
 The main use is envisaged as low power small cells, configured for typical
 bandwidths of 1.4MHz and 3MHz, operating in `Ofcom Shared Access`_ and `CBRS`_
-spectrum. These networks will initially support a data service only, but support
-for native voice dialling via VoLTE — aka "HD voice" — is planned, along with
-potentially circuit-switched fallback (CSFB) also at some point in the future. 
-
-Roadmap
--------
-
-The project is split at a high level into four initial phases, with the first
-being concerned with building out the CI hardware platform. This will be
-followed by CI configuration and test, support for basic LTE data service, and
-then support for native voice calling over LTE.
-
-Continous Integration (CI) Hardware
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The CI platform integrates one or more test base stations with LTE modem
-banks via a cabled RF network, with reference clock distribution, control, and
-RF measurement.
-
-CI Platform Configuration and Test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-
-Automated testing will be made possible via use of the `OsmoGSMTester`_ software. Test coverage will be extended over time as the project develops.
-
-This is the current development focus and see :doc:`/developer/software/ci/index` for details.
-
-Basic Service
-^^^^^^^^^^^^^
-
-This stage has been completed and for details see the :doc:`/user/index`.
-
-Voice over LTE (VoLTE) Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-An IP Multimedia Subsystem (IMS) will be integrated to enable native voice calling using the network.
+spectrum. 
 
 Software Stack
 --------------
 
-The key software components in the provisional stack are summarised below, but
-this is by no means a comprehensive list and is subject to change.
+The key software components are summarised below.
+
+Note that the IMS need not be deployed if only a data service is required, i.e. no VoLTE or SMS service. 
 
 eNodeB
 ^^^^^^
 
-The 4G base station component will be provided by `srsRAN`_.
+The 4G base station component is provided by the `MyriadRF fork of srsRAN 4G`_. This has native support — direct API integration — for the LimeSDR family of boards, which are the main focus for SDR hardware. Although it is also possible to use LimeSDR hardware via the SoapySDR API, we have found that this has a significant performance overhead and is not recommended. 
+
+Home Subscriber Server (HSS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`PyHSS`_ is used to provide a HSS where subscribers are provisioned, for both the EPC and an IMS if one is set up. It also provides a Policy and Charging Rules Function (PCRF) and an Equipment Identity Register (EIR).
 
 Evolved Packet Core (EPC)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is planned to use `Open5Gs`_ to provide the core network, but initially the srsEPC component of srsRAN is being used.
+The Standard Software Installation makes use of `Open5GS`_ to provide all EPC functions apart from the HSS and PCRF, which are provided by PyHSS.
 
-IP Multimedia Subsystem
-^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
 
-It is intended to use `Kamailio`_ for the IMS.
+   A Minimal Software Installation is also available, which uses the srsEPC component of srsRAN 4G. This provides a simple EPC which integrates a basic HSS and therefore PyHSS is not required. 
+
+IP Multimedia Subsystem (IMS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Kamailio`_ is used to provide the P-CSCF, I-CSCF, S-CSCF and SMSC elements of an IMS, which are used to provide native voice (VoLTE) and SMS services.
 
 Reference Hardware Platform
 ---------------------------
@@ -80,11 +56,12 @@ The initial reference hardware is specified with a reasonable degree of headroom
 in terms of performance and flexibility, which clearly has cost implications and
 a future cost-optimised version is also anticipated.
 
-For details, see: :doc:`/user/hardware`
+For details, see: :doc:`/user/hardware/index`
 
 .. _OsmoGSMTester: https://osmocom.org/projects/osmo-gsm-tester
 .. _Ofcom Shared Access: https://www.ofcom.org.uk/manage-your-licence/radiocommunication-licences/shared-access
 .. _CBRS: https://en.wikipedia.org/wiki/Citizens_Broadband_Radio_Service
-.. _srsRAN: https://www.srsran.com/
+.. _MyriadRF fork of srsRAN 4G: https://github.com/myriadrf/srsRAN_4G/
+.. _PyHSS: https://github.com/nickvsnetworking/pyhss
 .. _Open5Gs: https://open5gs.org/
 .. _Kamailio: https://www.kamailio.org/

@@ -6,7 +6,7 @@ User Guide
    :hidden:
 
    spectrum
-   hardware
+   hardware/index
    software/index
    configuration
    sim
@@ -21,7 +21,7 @@ This guide provides details of how to create an LTE small cell using the LibreCe
 The following steps are required in order to create an LTE network:
 
 #. :doc:`Spectrum Licensing<spectrum>`
-#. :doc:`Hardware Setup <hardware>`
+#. :doc:`Hardware Setup <hardware/index>`
 #. :doc:`software/index`
 #. :doc:`configuration`
 #. :doc:`sim`

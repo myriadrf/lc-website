@@ -1,10 +1,10 @@
-Reference Hardware
-==================
+Lab Setup
+=========
 
 .. figure:: /images/RHP_0p1_1.jpg
    :align: center
 
-The current Reference Hardware Platform is comprised of:
+The Lab Reference Hardware platform is comprised of:
 
 * `Intel NUC11TNHi5`_
 * `LimeSDR-USB`_
