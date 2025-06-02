@@ -15,9 +15,6 @@ User Guide
 
 This guide provides details of how to create an LTE small cell using the LibreCellular Reference Hardware Platform and software stack.
 
-.. attention::
-   There is still a great deal of testing that needs to be done and there are likely to be performance issues and perhaps even bugs. In addition to which, only basic core network functionality is provided at present.
-
 The following steps are required in order to create an LTE network:
 
 #. :doc:`Spectrum Licensing<spectrum>`

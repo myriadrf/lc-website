@@ -16,7 +16,9 @@ Views
    
    CIRAN1 Rear Panel.
 
-*Photographs to be added once build of the first system has been completed.*
+.. figure:: /images/CSRAN1_Internal_1280w.jpg
+   
+   CSRAN1 Internal (with a single B3MPA fitted).
 
 Theory of operation
 -------------------

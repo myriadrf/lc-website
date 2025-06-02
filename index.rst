@@ -6,6 +6,7 @@
    introduction/index
    user/index
    developer/index
+   primer/index
    faq
 
 .. figure:: images/Base_Station_Hardware_1280w.jpg

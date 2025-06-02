@@ -20,7 +20,7 @@ import sphinx_git
 # -- Project information -----------------------------------------------------
 
 project = 'LibreCellular'
-copyright = '2021-2024, LibreCellular contributors'
+copyright = '2021-2025, LibreCellular contributors'
 author = 'LibreCellular contributors'
 
 # The full version, including alpha/beta/rc tags

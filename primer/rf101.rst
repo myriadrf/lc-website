@@ -1,0 +1,60 @@
+RF 101
+======
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+RF engineering is a huge topic and here we will provide but the briefest introduction to a small selection of key concepts, with the recommendation to explore these in further detail via either a classical text or one of the many resources available online.
+
+This section will be expanded upon over time and for now should be considered a stub.
+
+Decibel (dB)
+------------
+
+Decibel is a relative unit of measurement and expresses the ratio of two values on a logarithmic scale. It is frequently used in wireless systems engineering for its convenience. RF amplifiers are specified in terms of their dB gain, and rated maximum power inputs and outputs expressed in dBm or dbW, which are referenced to 1 milliwatt and 1 watt respectively. 
+
+Every 3dB change represents a doubling or halving of power. So for example:
+
+* -6 dbm = 0.25 milliwatt
+* -3 dBm = 0.5 milliwatt
+* 0 dBm = 1 milliwatt
+* 3 dBm = 2 milliwatt
+* 6 dBm = 4 milliwatt 
+
+Coaxial cables meanwhile will specify their attenuation (typically per 30.5m or 100ft) at a given frequency in dB, with the attenuation becoming higher as the frequency increases. Hence if at our operating frequency we had 6 dB of loss in the antenna cable and its connectors, we would only have a quarter of the power which were input to this actually going to the antenna.
+
+Effective Isotropic Radiated Power (EIRP)
+-----------------------------------------
+
+An isotropic radiator is a theoretical point source of waves which radiates the same intensity in all directions. Effective isotropic radiated power is the hypothetical power that would have to be radiated by an isotropic antenna, in order to give the same signal strength as an actual antenna in the direction of its strongest beam. The stronger the effect of directing its signal, the higher the gain an antenna is said to have.
+
+As such EIRP is an important metric in radio planning and spectrum licensing, since rather than just being concerned with the output power of transmitting equipment, it also takes into account the effect of different types of antenna in directing or focusing the transmitted signal.
+
+Another benefit of higher gain antennas is that this also works in the receive (uplink) direction. Which is to say that it increases the ability for a base station to hear UEs. With public macro networks it is common to see clusters of large sectored antennas which have a narrow beam width, thereby enabling greater capacity (more transceivers) and receive sensitivity (higher gain antennas).
+
+Antenna Systems
+---------------
+
+An antenna will have a stated gain at a particular frequency and this is expressed in decibels. However, the antenna gain is not the only factor which will affect the final EIRP value, since coaxial cabling and connectors also introduce losses.
+
+A base station will produce a certain power level at the transmit port, from which we can subtract feeder losses and add the antenna gain. For example, with:
+
+    • Transmit power: 24 dBm 
+    • Feeder loss: 5 dB
+    • Antenna gain: 7 dB
+
+We would have an EIRP of 26 dBm (~400mW).
+
+If this were a 2x2 MIMO system with two transmit ports, each with the same output level and antenna system, the EIRP would be 29 dBm — and not 52 dBm, which would be more than 158 watts!
+
+Power Amplifiers
+----------------
+
+To achieve any sort of range with a cellular network requires RF power amplification. This is not the most straightforward of topics and there are numerous considerations. The LibreCellular RFE attempts to provide some level of convenience here and is designed to be used with both “small cell” type deployments and as a driver stage with more powerful final RF power amplifiers.
+
+A key thing to note is that LTE and 5G signals have a high peak-to-average power ratio (PAPR) and unfortunately, a system must be designed with the signal peaks in mind and not simply the average power. Failure to do so can easily result in signal quality being compromised to the extent that network performance is poor and/or there is interference to adjacent spectrum users.
+
+As such it may be necessary to operate RF amplifiers with the input signal backed off by up to 10 dB from their rated power. Enabling crest factor reduction (CFR) in the eNodeB can result in the PAPR figure being lowered by 3 dB and hence the amount of back-off required, but this would still mean 7 dB of back-off and hence an amplifier operating with an average power output less than a quarter of that which it might be capable of with much simpler wireless systems.
+
+Solutions to the high PAPR problem include not only CFR, but pre-distortion, which may be implemented using analogue or digital techniques. However, this is an advanced topic and requires either a more sophisticated SDR which is capable of supporting digital pre-distortion (DPD), an analogue pre-distortion solution, or an amplifier with such features directly integrated. 
