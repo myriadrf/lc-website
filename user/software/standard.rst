@@ -41,113 +41,126 @@ Next configure the CPU governor to use performance mode:
 
 This is to ensure that the SDR transceiver application does not suffer scheduling delays, which could result in reduced performance and/or instability.
 
-Network Components
-------------------
+Ansible
+-------
 
-The various components are installed using Ansible playbooks. The git repo containing these and the software stack configuration should be cloned:
-
-.. code-block:: bash
-
-   git clone https://github.com/myriadrf/lc-configs.git
-   cd lc-configs/standard
-
-The site.yml file should be edited and at minimum the following config parameters updated:
-
-* **network.host**. The hostname of the target system.
-* **mysql.root_passwd**. The MySQL root password.
-
-Although it would be prudent to also change the MySQL passwords for the network elements.
-
-If the Ansible playbooks are being run from an admin system the hostname should resolve to a remote IP. Whereas if the playbooks are being run directly on the target system the value can be set to localhost. Note that the target system will also need to be in your /etc/ansible/hosts file.
-
-The user account on the target system should be a member of the docker group and have sudo acccess. With network deployment it is assumed that the remote system has a user with the same name as the local user, but of course the target system username can be set to be something different, e.g. via the ansible_user option with the system's entry in /etc/ansible/hosts.
-
-Base
-^^^^
-
-The base playbook creates a Docker private network and installs the software stack configuration under /etc/lc.
+Ansible will need to be installed on the system which will be used to deploy the software stack. This can be the target system itself, or a separate admin system which has SSH access to the target system.
 
 .. code-block:: bash
 
-   ansible-playbook base.yml
+   sudo apt install ansible
 
-At this stage if the MySQL passwords have been changed for any of the network elements — pyhss, pcscf and icscf etc. — you may wish to update their configuration files accordingly, before deploying the stack itself.
+LibreCellular Ansible Collection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It also vitally important to update the eNodeB configuration, to ensure that the base station will be operating on an appropriately licensed RF channel and bandwidth for the site in question. This can be done by editing the file /etc/lc/srsenb/enb.conf. See the `srsRAN 4G documentation`_ for details.
-
-.. danger::
-   LTE networks operate in licensed spectrum and operating equipment without a licence from the regulatory authority in your country is likely to be a crime punishable under applicable law.
-
-HSS
-^^^
-
-The HSS playbook deploys the following Docker containers:
-
-* **BIND**. DNS server dependency for IMS.
-* **MySQL**. Database server dependency for PyHSS and Kamailio.
-* **Redis**. In-memory data store dependency for PyHSS.
-* **PyHSS Base**. HSS base container.
-* **PyHSS API**. HSS API (RESTful server) container.
-
-A DNS server is required for the IMS components to function correctly and this will only be available via the Docker private network.
+An Ansible collection has been created with the roles required to deploy the standard software stack. This can be installed with:
 
 .. code-block:: bash
 
-   ansible-playbook hss.yml
+   ansible-galaxy collection install myriadrf.librecellular
 
-EPC
-^^^
+This is comprised of the following roles:
 
-The EPC playbook deploys the following Open5GS Docker containers:
+* **myriadrf.librecellular.base**. 
 
-* **PGW-C / SMF**. Packet Gateway Control Plane (contained in Open5GS SMF).
-* **PGW-U / UPF**. Packet Gateway User Plane (contained in Open5GS UPF).
-* **SGW-C**. Serving Gateway Control Plane.
-* **SGW-U**. Serving Gateway User Plane.
-* **MME**. Mobility Management Entity.
+  * Base role which installs Ansible Python dependencies on the target system, and creates the base config directory and Docker private network.
 
-.. code-block:: bash
+* **myriadrf.librecellular.hss**. 
 
-   ansible-playbook epc.yml
+  * Installs and configures the PyHSS Home Subscriber Server, along with MySQL, Redis and BIND. 
 
-IMS Databases
-^^^^^^^^^^^^^
+* **myriadrf.librecellular.epc**. 
 
-This playbook creates the MySQL databases which are required by Kamailio:
+  * Installs and configures the Open5GS Evolved Packet Core, comprised of the MME, SGW-C, SGW-U, UPF and SMF.
 
-.. code-block:: bash
+* **myriadrf.librecellular.ims**. 
 
-   ansible-playbook ims_dbs.yml
+  * Installs and configures the Kamailio IP Multimedia Subsystem (IMS) core, comprised of I-CSCF, S-CSCF, P-CSCF and SMSC.
 
-.. danger::
-   This playbook should only be run once and if run a second time will create duplicate entries. In case of errors it may be easiest to drop the offending database(s) and re-run the playbook or part of it. This is a temporary limitation and will be addressed in future.
+* **myriadrf.librecellular.enb**. 
 
-IMS
-^^^
+  * Installs and configures the srsENB LTE eNodeB, along with Lime Suite.
 
-This playbook deploys the following Kamailio Docker containers:
+The roles should be executed in the order listed above, since each role depends on the previous one. The base role should always be run first, followed by the HSS, EPC, IMS and finally the eNodeB.
 
-* **P-CSCF**. Proxy Call Session Control Function.
-* **I-CSCF**. Interrogating Call Session Control Function.
-* **S-CSCF**. Serving Call Session Control Function.
-* **SMSC**. Short Message Service Centre.
+In certain cases some roles may be omitted, e.g. IMS if this is not required.
 
-.. code-block:: bash
+Example Playbooks
+^^^^^^^^^^^^^^^^^
 
-   ansible-playbook ims.yml
+Minimal 
++++++++
 
-eNodeB
-^^^^^^
+A minimal playbook to deploy the complete software stack is as follows:
 
-This playbook deploys the srsENB Docker container:
+.. code-block:: yaml
 
-.. code-block:: bash
+   - name: Deploy LibreCellular standard software stack
+     hosts: all
+     become: true
+     vars:
+       enb_earfcn: '1934'
+       enb_nprb: '15'
+       hss_mysql_root_password: 'rootpasswd'
+       hss_mysql_db_password: 'pyhsspasswd'
+       ims_mysql_password: 'imspasswd'
+       hss_provisioning_key: 'changeThisKeyInProduction'
+     roles:
+       - myriadrf.librecellular.base
+       - myriadrf.librecellular.hss
+       - myriadrf.librecellular.epc
+       - myriadrf.librecellular.ims
+       - myriadrf.librecellular.enb
 
-   ansible-playbook enb.yml
+The Ansible roles have many default values and using the above minimal playbook will result in a working system with the following notable defaults:
 
-Ensure that you have configured this component for the appropriate radio channel and bandwidth via /etc/lc/srsenb/enb.conf before deploying!
+* **MCC**: 001
+* **MNC**: 01
+* **Network name**: LibreCellular
+
+However, no defaults are provided for the eNodeB EARFCN and number of PRBs, since this could easily result in transmitting on unlicensed spectrum. Therefore these must be specified in the playbook, as shown above.
+
+Similarly, the MySQL root password, HSS MySQL password, IMS MySQL password and HSS provisioning key must also be specified. Since providing defaults for these would not be secure.
+
+Typical 
++++++++
+
+A more typical playbook would also include the MCC, MNC and network name. 
+
+.. code-block:: yaml
+
+   - name: Deploy LibreCellular standard software stack
+     hosts: all
+     become: true
+     vars:
+       lc_mcc: '999'
+       lc_mnc: '99'
+       lc_network_name_full: 'LibreCellular'
+       lc_network_name_short: 'LibreCellular'
+       enb_earfcn: '1934'
+       enb_nprb: '15'
+       hss_mysql_root_password: 'rootpasswd'
+       hss_mysql_db_password: 'pyhsspasswd'
+       ims_mysql_password: 'imspasswd'
+       hss_provisioning_key: 'changeThisKeyInProduction'
+     roles:
+       - myriadrf.librecellular.base
+       - myriadrf.librecellular.hss
+       - myriadrf.librecellular.epc
+       - myriadrf.librecellular.ims
+       - myriadrf.librecellular.enb
+
+For details of the variables which can be set in the playbook, see the `myriadrf.librecellular Ansible collection`_, and in particular the `roles/<role_name>/defaults/main.yml` files for each role. 
+
+Where a variable is used by multiple roles it can be set with an `lc_` prefix, e.g. `lc_mcc` and `lc_mnc`, or alternatively the variable can be set at the level of the role, e.g. `hss_mcc` and `hss_mnc`.
+
+Note that there are a large number of parameters which can be configured across the entire cellular network stack and many ways in which this can be customised. The above examples are intended to provide a starting point and demonstrate the minimum required configuration to get a working system. 
+
+It is hoped to eventually provide a more comprehensive set of example base configurations, which demonstrate how to configure the network for different use cases. For example, with EPC and IMS core running on a central host and then with one or more distributed eNodeBs securely connected to these.
+
+.. warning::
+   Some parameters are configured in multiple places. For example, the MCC and MNC, which are configured in the HSS, EPC and IMS. Therefore care must be taken to ensure that these are consistent across the entire network stack.
 
 .. _Ubuntu Server: https://ubuntu.com/download/server
-.. _how to install Docker Engine: https://docs.docker.com/engine/install/
-.. _srsRAN 4G documentation: https://docs.srsran.com/projects/4g/en/latest/usermanuals/source/srsenb/source/index.html
-
+.. _how to install Docker Engine: https://docs.docker.com/engine/install/usermanuals/source/srsenb/source/index.html
+.. _myriadrf.librecellular Ansible collection: https://github.com/myriadrf/lc-ansible-collection

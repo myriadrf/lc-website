@@ -10,5 +10,6 @@ RF components are being developed where existing solutions are either not availa
    :hidden:
 
    rfe
+   rfemini
    b3lpd
    b3mpa

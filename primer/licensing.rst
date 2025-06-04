@@ -16,7 +16,7 @@ Some of the conditions which may be attached to a cellular spectrum licence are 
 
 **Geographical location**
 
-This may be fixed coordinates or within some radius of a specified location.
+A base station may need to be at fixed coordinates or within some radius of a specified location.
 
 **Deployment location**
 
@@ -36,7 +36,7 @@ The permitted RF channel bandwidth.
 
 **Maximum power**
 
-This is usually specified in terms of the equivalent isotropically radiated power (EIRP), which takes into account antenna cable losses and antenna gains. See the RF Basics section for further details.
+This is usually specified in terms of the equivalent isotropically radiated power (EIRP), which takes into account antenna cable losses and antenna gains. See the :doc:`rf101` section for further details.
 
 **Synchronisation**
 
@@ -54,14 +54,14 @@ United Kingdom
 
 The UK wireless regulator has made a number of cellular bands available for use with private and community networks via its Shared Access scheme. This includes the aforementioned 1800 MHz allocation, along with spectrum in the 2300 MHz, 3.8-4.2 GHz and 26 GHz bands. Low and medium power licences are available, with the latter enabling much greater coverage, albeit with certain restrictions and being aimed more at use in rural areas. Licences are priced based on the amount of spectrum required and at the time of writing this starts at £80/site/year.
 
-For further details see the Ofcom website.
+For further details see the `Ofcom website`_ and the :doc:`User Guide section on spectrum licensing </user/spectrum>`.
 
 Netherlands
 +++++++++++
 
 For some time it’s been possible in the Netherlands to operate private cellular networks which take advantage of 5 MHz of license exempt spectrum in the 1800 MHz band. Which is to say that no paperwork, permission or payment is required. An obvious downside to this is that spectrum is not dedicated and usage may be contended, but it sets a very low barrier to access and with a transmit power limit of 200mW EIRP, contention shouldn’t be a frequent problem, while still providing reasonable coverage. Spectrum has also been made available in the 3.6 GHz band for private 5G networks, although it appears as though this may be aimed at larger enterprise users.
 
-For further details see the Rijksinspectie Digitale Infrastructuur website.
+For further details see the `Rijksinspectie Digitale Infrastructuur website`_.
 
 United States of America
 ++++++++++++++++++++++++
@@ -72,4 +72,8 @@ CBRS spectrum is dynamically managed and PALs have priority use after incumbents
 
 CBRS spectrum may be used with both LTE and 5G private networks.
 
-For more details see the FCC website.
+For more details see the `FCC website`_.
+
+.. _Ofcom website: https://www.ofcom.org.uk/manage-your-licence/radiocommunication-licences/shared-access
+.. _Rijksinspectie Digitale Infrastructuur website: https://www.rdi.nl/
+.. _FCC website: https://www.fcc.gov/wireless/bureau-divisions/mobility-division/35-ghz-band/35-ghz-band-overview

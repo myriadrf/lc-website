@@ -11,7 +11,10 @@ Note that an eNodeB is usually an appliance and may run embedded Linux, but with
 
 A key benefit of using a software-defined radio to create an eNodeB is that this is extremely flexible. If we wanted to change frequency band it’s just configuration, that is assuming our RF front-end (RFE) comprised of amplifiers and filters is compatible with the new band. If the software is updated to support a new 3GPP release or add new features, this is just a software update. Indeed, if we wanted to switch from 4G to 5G operation, or perhaps to 2G/GSM, this is just a question of changing the SDR software — again assuming that the RFE is compatible with the frequency band.
 
-The downside to using an SDR is that this is just part of the system and to go beyond a benchtop experiment, we really need RF filtering and very likely amplification also. Which is why we provide designs for an RF Front-End (RFE) and complete base station reference design.
+The downside to using an SDR is that this is just part of the system and to go beyond a benchtop experiment, we really need RF filtering and very likely amplification also. Which is why we provide designs for an :doc:`/developer/hardware/rf/rfe` and complete :doc:`base station reference design </user/hardware/csran1>`.
 
-The LibreCellular project makes use of the eNodeB provided as part the srsRAN 4G stack from Software Radio Systems. There are plans to eventually add support for srsRAN 5G also and possibly the Osmocom 2G stack, since GSM can have advantages in certain applications. E.g. where only voice/SMS is required and greater coverage range and/or UE battery life is desirable. 
+The LibreCellular project makes use of the eNodeB provided as part the `srsRAN 4G`_ stack from Software Radio Systems. There are plans to eventually add support for `srsRAN 5G`_ also and possibly the `Osmocom 2G`_ stack, since GSM can have advantages in certain applications. E.g. where only voice/SMS is required and greater coverage range and/or UE battery life is desirable. 
 
+.. _srsRAN 4G: https://www.srsran.com/4g
+.. _srsRAN 5G: https://www.srsran.com/5g
+.. _Osmocom 2G: https://osmocom.org/projects/cellular-infrastructure

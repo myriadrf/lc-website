@@ -5,18 +5,18 @@ Evolved Packet Core
    :maxdepth: 2
    :hidden:
 
-The srsRAN 4G stack is provided complete with a minimal, easy to use, single binary EPC. This may be sufficient for simple requirements and for details see EPC Minimal Software Configuration.
+The srsRAN 4G stack is provided complete with a minimal, easy to use, single binary EPC. This may be sufficient for simple requirements and for details see :doc:`/user/software/minimal`.
 
-A much more fully featured EPC is provided by Open5GS, which can also be configured to provide a 5G Core, or a combination of this and EPC. Whereas the srsRAN EPC is a monolithic solution, Open5GS is a series of software components which provide the various different functions of a core network. An approach which provides a lot more flexibility and means that, for example, configurations can be created where certain network functions are provided by other software.
+A much more fully featured EPC is provided by `Open5GS`_, which can also be configured to provide a 5G Core, or a combination of this and EPC. Whereas the srsRAN EPC is a monolithic solution, Open5GS is a series of software components which provide the various different functions of a core network. An approach which provides a lot more flexibility and means that, for example, configurations can be created where certain network functions are provided by other software.
 
-Open5GS is used to provide the EPC Standard Software Configuration.
+Open5GS is used for the :doc:`/user/software/standard`.
 
 Home Subscriber Server (HSS)
 ----------------------------
 
-The Home Subscriber Server (HSS) is the master database where users are provisioned. It is responsible for authentication and authorisation, and provides information about subscriber location and IP information, enabling UEs to be paged, and bearers and SIPs session setup. 
+The Home Subscriber Server (HSS) is the master database where users are provisioned. It is responsible for authentication and authorisation, and provides information about subscriber location and IP info, enabling UEs to be paged, and bearers and SIP sessions to be setup. 
 
-Although Open5GS provides a HSS, the PyHSS software is used for this function instead, since it provides the necessary functionality to also support use with an IMS core, whereas the Open5GS HSS does not. PyHSS is a reasonably lightweight application which makes use of MySQL and Redis, and it exposes a web API for managing subscriber records.
+Although Open5GS provides a HSS, the `PyHSS`_ software is used for this function instead, since it provides the necessary functionality to also be used with an IMS core, whereas the Open5GS HSS does not. PyHSS is a reasonably lightweight application which makes use of MySQL and Redis, and it exposes a web API for managing subscriber records.
 
 Mobility Management Entity (MME)
 --------------------------------
@@ -57,3 +57,7 @@ So just to recap our core network is comprised of:
 * **Packet Data Network Gateway (PGW)**. Allocate IPs to UEs, enforce policies and route to/from external networks.
 
   * Provided by Open5GS UPF and SMF.
+
+.. _Open5GS: https://open5gs.org
+.. _PyHSS: https://github.com/nickvsnetworking/pyhss
+

@@ -7,8 +7,8 @@ User Guide
 
    spectrum
    hardware/index
-   software/index
    configuration
+   software/index
    sim
    subscribers
    running

@@ -1,4 +1,4 @@
-.. figure:: /images/RFE_RevA1_PCB_1.jpg
+.. figure:: /images/RFE_RevA2_PCB_1.jpg
    :align: center
 
 RF Front-End
@@ -15,7 +15,7 @@ Other useful features include RF power measurement, SDR Tx/Rx loopback, and exte
 
 For small cell applications the RFE may be used with the addition of only a band-specific duplexer (FDD) or filter (TDD). Where greater coverage is required this may be achieved via the use of RF power amplifiers, with the RFE performing the function of a driver stage and switching DC power to the PAs.
 
-.. figure:: /images/RFE_RevA1_Case_1.jpg
+.. figure:: /images/RFE_Case_1.jpg
    :align: center
 
 The RFE has been designed so that it can be assembled for either integration into a larger system, such as a base station, or fitting into its own dedicated enclosure for lab use. In the case of the former it is equipped with U.FL connectors, while for standalone use SMA connectors are fitted. Similarly, different connectors for USB, I/O and power are fitted based on usage. In actual fact it may be fitted with both sets of connectors at the same time, but to switch between U.FL and SMA connectors requires 0R resistor links to be changed.
@@ -23,7 +23,7 @@ The RFE has been designed so that it can be assembled for either integration int
 Specifications
 --------------
 
-.. list-table:: LibreCellular RFE RevA1 Prelimenary Specifications
+.. list-table:: LibreCellular RFE RevA2 Prelimenary Specifications
     :header-rows: 0
 
     * - MIMO
@@ -53,7 +53,7 @@ Specifications
 Theory of operation
 -------------------
 
-.. figure:: /images/RFE_RevA1_RF-Top.png
+.. figure:: /images/RFE_RF-Top.png
    :align: center
 
 The RFE is comprised of two identical channels, A and B, each with transmit and receive branches.
@@ -72,7 +72,7 @@ By default the transmit signal input is routed to the corresponding TRX out port
 TDD may also be made active via USB control, so as to provide a simple *transmit inhibit* function. This is useful with SDRs which emit an unwanted signal when calibration is run prior to streaming starting, as this may be activated before the eNodeB starts and then made inactive once it is running. Thereby preventing unwanted signals from being radiated.
 
 
-.. figure:: /images/RFE_RevA1_RF-PM.png
+.. figure:: /images/RFE_RF-PM.png
    :align: center
 
 The RF power measurement block is bypassed by default. In *SDR* mode it is configured to measure the SDR transmit power output. Once this is known the block may then be configured to provide Tx/Rx loopback and following which the SDR RSSI function may be calibrated.

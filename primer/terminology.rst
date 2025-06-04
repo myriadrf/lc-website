@@ -37,7 +37,7 @@ So just to recap:
 * **User Equipment (UE)**. Handset, cellular modem or other subscriber device.
 * **eNodeB**. 4G base station.
 * **E-UTRA Absolute Radio Frequency Channel Number (EARFCN)**. Radio channel.
-* **Evolved Packet Core (EPC)**. Mobile core network.
+* **Evolved Packet Core (EPC)**. LTE core network.
 * **Packet Data Network (PDN)**. Data services network identified by its APN. 
 * **IP Multimedia Subsystem (IMS)**. Used to provide native voice and SMS support.
 * **Circuit-Switched Fallback (CSFB)**. In the absence of an IMS or with a UE which does not have VoLTE support or this is not configured, falling back to 2G/3G for voice and SMS. 

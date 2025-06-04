@@ -5,14 +5,14 @@ RF 101
    :maxdepth: 2
    :hidden:
 
-RF engineering is a huge topic and here we will provide but the briefest introduction to a small selection of key concepts, with the recommendation to explore these in further detail via either a classical text or one of the many resources available online.
+RF engineering is a huge topic and here we will provide but the briefest introduction to a small selection of important concepts found in mobile networks, with the recommendation to explore these in further detail via either a classical text or one of the many resources available online.
 
-This section will be expanded upon over time and for now should be considered a stub.
+This section will be expanded upon over time.
 
 Decibel (dB)
 ------------
 
-Decibel is a relative unit of measurement and expresses the ratio of two values on a logarithmic scale. It is frequently used in wireless systems engineering for its convenience. RF amplifiers are specified in terms of their dB gain, and rated maximum power inputs and outputs expressed in dBm or dbW, which are referenced to 1 milliwatt and 1 watt respectively. 
+Decibel is a relative unit of measurement and expresses the ratio of two values on a logarithmic scale. It is frequently used in wireless systems engineering for its convenience. Amongst other things RF amplifiers are specified in terms of their dB gain, and rated maximum power inputs and outputs expressed in dBm or dbW — which are referenced to 1 milliwatt and 1 watt respectively. 
 
 Every 3dB change represents a doubling or halving of power. So for example:
 
@@ -31,7 +31,7 @@ An isotropic radiator is a theoretical point source of waves which radiates the 
 
 As such EIRP is an important metric in radio planning and spectrum licensing, since rather than just being concerned with the output power of transmitting equipment, it also takes into account the effect of different types of antenna in directing or focusing the transmitted signal.
 
-Another benefit of higher gain antennas is that this also works in the receive (uplink) direction. Which is to say that it increases the ability for a base station to hear UEs. With public macro networks it is common to see clusters of large sectored antennas which have a narrow beam width, thereby enabling greater capacity (more transceivers) and receive sensitivity (higher gain antennas).
+An added benefit of higher gain antennas is that this also works in the receive (uplink) direction. Which is to say that it increases the ability for a base station to hear UEs. With public networks it is common to see clusters of large sectored antennas which have a narrow beam width, thereby enabling greater capacity (more transceivers) and receive sensitivity (higher gain antennas).
 
 Antenna Systems
 ---------------
@@ -46,7 +46,7 @@ A base station will produce a certain power level at the transmit port, from whi
 
 We would have an EIRP of 26 dBm (~400mW).
 
-If this were a 2x2 MIMO system with two transmit ports, each with the same output level and antenna system, the EIRP would be 29 dBm — and not 52 dBm, which would be more than 158 watts!
+If this were a 2x2 MIMO system with two transmit ports, each with the same output level and antenna system, the EIRP would be 29 dBm — remember that an increase of 3 dB is a doubling in power — and not 52 dBm, which would be more than 158 watts!
 
 Power Amplifiers
 ----------------
@@ -55,6 +55,27 @@ To achieve any sort of range with a cellular network requires RF power amplifica
 
 A key thing to note is that LTE and 5G signals have a high peak-to-average power ratio (PAPR) and unfortunately, a system must be designed with the signal peaks in mind and not simply the average power. Failure to do so can easily result in signal quality being compromised to the extent that network performance is poor and/or there is interference to adjacent spectrum users.
 
-As such it may be necessary to operate RF amplifiers with the input signal backed off by up to 10 dB from their rated power. Enabling crest factor reduction (CFR) in the eNodeB can result in the PAPR figure being lowered by 3 dB and hence the amount of back-off required, but this would still mean 7 dB of back-off and hence an amplifier operating with an average power output less than a quarter of that which it might be capable of with much simpler wireless systems.
+As such it may be necessary to operate RF amplifiers with the input signal backed off by up to 10 dB from their rated maximum power. 
 
-Solutions to the high PAPR problem include not only CFR, but pre-distortion, which may be implemented using analogue or digital techniques. However, this is an advanced topic and requires either a more sophisticated SDR which is capable of supporting digital pre-distortion (DPD), an analogue pre-distortion solution, or an amplifier with such features directly integrated. 
+Enabling crest factor reduction (CFR) in an eNodeB can result in the PAPR figure being lowered by up to 3 dB and hence the amount of back-off required, but this might still mean at best 7 dB of back-off and hence an amplifier operating with an average power output less than a quarter of that which it might be capable of with much simpler wireless systems.
+
+Solutions to the high PAPR problem include not only CFR, but pre-distortion, which may be implemented using analogue or digital techniques. However, this is an advanced topic and requires either a more sophisticated SDR which is capable of supporting digital pre-distortion (DPD), an analogue pre-distortion solution, or a power amplifier with such features directly integrated. 
+
+Filtering
+---------
+
+Most transmit capable SDRs are wideband devices without any form of RF filtering, since this would either limit their use or greatly increase their size and cost due to the addition of band-specific filtering. However, a lack of filtering can result in both interference to other spectrum users and also the SDR itself being susceptible to interference from other transmitters.
+
+Therefore while it is possible to experiment with cellular networks with only a host computer, an SDR and two small antennas, for any sort of practical use it is necessary to add band-specific filtering. This is typically done using a duplexer for FDD operation, or a band-pass filter for TDD operation. 
+
+Filter specifications include a power rating, which is the maximum RF power that can be applied to the filter without damaging it, insertion loss, which is the amount of signal power lost when passing through the filter, and rejection, which is the amount of signal power that is blocked outside of the passband.
+
+A band-pass filter is a simple two port device and would be situated between an RF front-end (RFE) which provides amplification and transmit/receive switching, and the antenna. A duplexer meanwhile is a three port device, with one port connected to the RFE transmit output, one to the RFE receive input, and the third to the antenna. The duplexer will allow signals to pass in both directions, but only on the correct ports and frequencies. 
+
+Some RFEs may also directly integrate one or more filters or duplexers. 
+
+
+
+
+
+
